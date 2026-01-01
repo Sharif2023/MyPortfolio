@@ -80,7 +80,11 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
 
-      <img src="assets/img/me.jpg" alt="" data-aos="fade-in" class="">
+      <!-- Responsive hero images: mobile portrait / desktop landscape -->
+      <picture data-aos="fade-in">
+        <source media="(max-width: 768px)" srcset="assets/img/me_mobile.jpg">
+        <img src="assets/img/me.jpg" alt="Shariful Islam" class="hero-img">
+      </picture>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <h2>Shariful Islam</h2>
