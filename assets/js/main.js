@@ -250,6 +250,19 @@ document.addEventListener("DOMContentLoaded", function () {
   const container = document.getElementById("github-projects");
   const fallback = document.getElementById("gh-fallback");
 
+  // Only show these specific repositories (optionally with a Live Demo link)
+  const PROJECTS = [
+    { name: "Amar_Recipies_ReactJS" },
+    { name: "StudyNest" },
+    { name: "CamSociety_Laraval" },
+    { name: "UIU-Health-Care", live: "https://uiu-healthcare.infinityfreeapp.com/" },
+    { name: "UIUSupplements", live: "http://uiusupplements.yzz.me/" },
+  ];
+  const ALLOWED_NAMES = new Set(PROJECTS.map(p => p.name.toLowerCase()));
+  const LIVE_BY_NAME = Object.fromEntries(
+    PROJECTS.filter(p => p.live).map(p => [p.name.toLowerCase(), p.live])
+  );
+
   // --- cache (session) to avoid rate limits during browsing
   const cacheKey = "gh_repos_with_commits_" + username;
   const cacheMins = 30;
@@ -286,13 +299,14 @@ document.addEventListener("DOMContentLoaded", function () {
     // 1) base repos (non-forks)
     let repos = readCache();
     if (!repos) {
-      const token = "my private token";
-      const headers = { Authorization: `token ${token}` };
-
-      const res = await fetch(`https://api.github.com/users/${username}/repos?per_page=100&sort=updated`, { headers });
+      // Use unauthenticated public GitHub API (sufficient for a personal portfolio)
+      const res = await fetch(`https://api.github.com/users/${username}/repos?per_page=100&sort=updated`);
       if (!res.ok) throw new Error("GitHub API rate limit or network error");
       repos = (await res.json()).filter(r => !r.fork).slice(0, 30);
     }
+
+    // Filter to only configured repos (also works when coming from cache)
+    repos = (repos || []).filter(r => ALLOWED_NAMES.has(String(r.name || "").toLowerCase()));
 
     let enriched;
     try {
@@ -303,7 +317,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const byName = Object.fromEntries(counts.map(c => [c.name, c.commits]));
       enriched = repos.map(r => ({ ...r, __commits: byName[r.name] || 0 }));
-      enriched.sort((a, b) => (b.__commits - a.__commits) || (new Date(b.pushed_at) - new Date(a.pushed_at)));
+      // stable order: match the order in PROJECTS list
+      enriched.sort((a, b) => {
+        const aIdx = PROJECTS.findIndex(p => p.name.toLowerCase() === String(a.name || "").toLowerCase());
+        const bIdx = PROJECTS.findIndex(p => p.name.toLowerCase() === String(b.name || "").toLowerCase());
+        return (aIdx === -1 ? 999 : aIdx) - (bIdx === -1 ? 999 : bIdx);
+      });
       writeCache(enriched);
     } catch {
       // fallback: sort by recent update only
@@ -311,15 +330,17 @@ document.addEventListener("DOMContentLoaded", function () {
         .sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at));
     }
 
-    // 3) render top N
-    const top = enriched.slice(0, 12);
-    if (!top.length) { fallback.style.display = "block"; return; }
+    // 3) render all configured projects
+    const selected = enriched;
+    if (!selected.length) { fallback.style.display = "block"; return; }
 
     const makeItem = (repo) => {
       const repoUrl = repo.html_url;
       const title = repo.name;
-      const desc = repo.description || `${repo.language || "Project"} • Updated ${new Date(repo.pushed_at).toLocaleDateString()}`;
+      const languageLabel = repo.language || "Project";
+      const desc = repo.description || `${languageLabel} • Updated ${new Date(repo.pushed_at).toLocaleDateString()}`;
       const ogImage = `https://opengraph.githubassets.com/1/${username}/${encodeURIComponent(title)}`;
+      const liveUrl = LIVE_BY_NAME[String(repo.name || "").toLowerCase()] || "";
       const lang = (repo.language || "App").toLowerCase();
       const filterClass =
         lang.includes("php") || lang.includes("laravel") ? "filter-product" :
@@ -328,6 +349,11 @@ document.addEventListener("DOMContentLoaded", function () {
               "filter-books";
       const commitBadge = `<span class="badge-commit" title="Total commits">${repo.__commits} commits</span>`;
       const starBadge = repo.stargazers_count > 0 ? `<span class="badge-star">★ ${repo.stargazers_count}</span>` : "";
+      const liveBtn = liveUrl
+        ? `<a href="${liveUrl}" target="_blank" rel="noopener" class="btn btn-sm projects-btn projects-btn-live">
+             Live Demo <i class="bi bi-box-arrow-up-right"></i>
+           </a>`
+        : "";
 
       return `
         <div class="col-lg-4 col-md-6 projects-item isotope-item ${filterClass}">
@@ -335,20 +361,28 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="gh-thumb-wrap">
               <img src="${ogImage}" class="img-fluid gh-card-img" alt="${title}" onerror="this.src='assets/img/projects/app-1.jpg'">
               <div class="gh-badges">${commitBadge}${starBadge}</div>
+              <a href="${ogImage}" title="${title}" data-gallery="projects-gallery-${filterClass}" class="glightbox preview-link">
+                <i class="bi bi-zoom-in"></i>
+              </a>
             </div>
             <div class="projects-info">
-              <h4>${title}</h4>
+              <div class="projects-header">
+                <h4>${title}</h4>
+                <span class="projects-pill">${languageLabel}</span>
+              </div>
               <p>${desc}</p>
-              <a href="${ogImage}" title="${title}" data-gallery="projects-gallery-${filterClass}" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              <a href="${repoUrl}" target="_blank" rel="noopener" class="btn btn-sm btn-primary mt-2">
-                Visit Repo <i class="bi bi-box-arrow-up-right"></i>
-              </a>
+              <div class="projects-actions">
+                <a href="${repoUrl}" target="_blank" rel="noopener" class="btn btn-sm projects-btn">
+                  Visit Repo <i class="bi bi-box-arrow-up-right"></i>
+                </a>
+                ${liveBtn}
+              </div>
             </div>
           </div>
         </div>`;
     };
 
-    container.innerHTML = top.map(makeItem).join("");
+    container.innerHTML = selected.map(makeItem).join("");
 
     // 4) Lightbox + Isotope reflow AFTER images load (prevents broken layouts)
     if (typeof GLightbox === "function") GLightbox({ selector: ".glightbox" });
