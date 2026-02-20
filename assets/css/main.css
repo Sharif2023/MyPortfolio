@@ -1419,3 +1419,171 @@ section,
     /* Focus on face/top portion */
   }
 }
+
+/*--------------------------------------------------------------
+# Certifications Section
+--------------------------------------------------------------*/
+.cert-card {
+  background: var(--surface-color);
+  border-radius: 14px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+  overflow: hidden;
+}
+
+.cert-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.10);
+  border-color: color-mix(in srgb, var(--accent-color), transparent 60%);
+}
+
+/* ── Card Header ──────────────────────────────────────────── */
+.cert-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px 12px;
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 92%);
+}
+
+.cert-issuer-logo {
+  display: flex;
+  align-items: center;
+  height: 32px;
+}
+
+.cert-issuer-logo img {
+  height: 28px;
+  width: auto;
+  max-width: 110px;
+  object-fit: contain;
+  filter: grayscale(20%);
+  opacity: 0.88;
+}
+
+.cert-issuer-fallback {
+  width: 32px;
+  height: 32px;
+  background: color-mix(in srgb, var(--accent-color), transparent 85%);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-color);
+  font-size: 18px;
+}
+
+.cert-date {
+  font-size: 12px;
+  font-weight: 600;
+  color: color-mix(in srgb, var(--default-color), transparent 35%);
+  background: color-mix(in srgb, var(--default-color), transparent 93%);
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+}
+
+/* ── Card Body ────────────────────────────────────────────── */
+.cert-card-body {
+  flex: 1;
+  padding: 18px 20px 14px;
+}
+
+.cert-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.cert-issuer-name {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent-color);
+  display: block;
+  margin-bottom: 10px;
+  letter-spacing: 0.2px;
+}
+
+.cert-description {
+  font-size: 13.5px;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+/* ── Skill Tags ───────────────────────────────────────────── */
+.cert-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.cert-tag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--accent-color), transparent 88%);
+  color: color-mix(in srgb, var(--accent-color), var(--heading-color) 30%);
+  letter-spacing: 0.3px;
+}
+
+/* ── Card Footer ──────────────────────────────────────────── */
+.cert-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px 18px;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 92%);
+}
+
+.cert-verify-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--contrast-color) !important;
+  background: var(--accent-color);
+  padding: 7px 14px;
+  border-radius: 8px;
+  transition: background 0.25s ease, transform 0.2s ease;
+  text-decoration: none !important;
+  white-space: nowrap;
+}
+
+.cert-verify-btn:hover {
+  background: color-mix(in srgb, var(--accent-color), #000 15%);
+  transform: translateY(-1px);
+  color: var(--contrast-color) !important;
+}
+
+.cert-view-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  font-weight: 600;
+  color: color-mix(in srgb, var(--default-color), transparent 20%) !important;
+  background: color-mix(in srgb, var(--default-color), transparent 93%);
+  padding: 7px 12px;
+  border-radius: 8px;
+  transition: background 0.25s ease, color 0.25s ease;
+  text-decoration: none !important;
+  white-space: nowrap;
+}
+
+.cert-view-btn:hover {
+  background: color-mix(in srgb, var(--default-color), transparent 86%);
+  color: var(--heading-color) !important;
+}
+
+/* Full-width view button (when no verify link) */
+.cert-view-btn--full {
+  flex: 1;
+  justify-content: center;
+}
