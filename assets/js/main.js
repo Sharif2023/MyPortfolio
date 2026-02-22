@@ -252,7 +252,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Only show these specific repositories (optionally with a Live Demo link)
   const PROJECTS = [
-    { name: "Amar_Recipies_ReactJS" },
+    { name: "Amar_Recipies_ReactJS", live: "https://amar-recipe.vercel.app/" },
     { name: "StudyNest" },
     { name: "CamSociety_Laraval" },
     { name: "UIU-Health-Care", live: "https://uiu-healthcare.infinityfreeapp.com/" },

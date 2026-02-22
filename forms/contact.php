@@ -26,13 +26,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
         $mail->Username   = 'sharifislam0505@gmail.com';
-        $mail->Password   = 'goot palf aldp xmgz';   
+        $mail->Password   = 'jmaf yvxz tash ubaq';   
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587;
 
         // Recipients
-        $mail->setFrom($email, $name);
-        $mail->addAddress('sharifislam0505@gmail.com', 'Shariful Islam'); // where it will be sent
+        $mail->setFrom('sharifislam0505@gmail.com', 'Shariful Islam Portfolio');
+        $mail->addAddress('sharifislam0505@gmail.com', 'Shariful Islam');
         $mail->addReplyTo($email, $name);
 
         // Content

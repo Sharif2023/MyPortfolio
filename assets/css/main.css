@@ -865,105 +865,208 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Contact Section
+# Contact Section — Premium Redesign
 --------------------------------------------------------------*/
-.contact .info-wrap {
-  background-color: var(--surface-color);
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-}
 
-@media (max-width: 575px) {
-  .contact .info-wrap {
-    padding: 20px;
-  }
-}
-
-.contact .info-item {
-  margin-bottom: 40px;
-}
-
-.contact .info-item i {
-  font-size: 20px;
-  color: var(--accent-color);
-  background: color-mix(in srgb, var(--accent-color), transparent 92%);
-  width: 44px;
-  height: 44px;
+/* Info Panel (Left) */
+.contact-info-panel {
+  background: linear-gradient(145deg,
+      color-mix(in srgb, var(--accent-color), transparent 90%) 0%,
+      var(--surface-color) 60%);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
+  border-radius: 20px;
+  padding: 38px 36px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50px;
-  transition: all 0.3s ease-in-out;
-  margin-right: 15px;
+  flex-direction: column;
+  gap: 28px;
 }
 
-.contact .info-item h3 {
-  padding: 0;
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 5px;
+.contact-info-heading {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--heading-color);
+  margin: 0;
+  line-height: 1.2;
 }
 
-.contact .info-item p {
-  padding: 0;
-  margin-bottom: 0;
-  font-size: 14px;
+.contact-info-sub {
+  font-size: 14.5px;
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  line-height: 1.7;
+  margin: 0;
 }
 
-.contact .info-item:hover i {
+.contact-info-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.contact-info-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
   background: var(--accent-color);
-  color: var(--contrast-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--accent-color), transparent 52%);
 }
 
-.contact .php-email-form {
-  background-color: var(--surface-color);
+.contact-info-icon i {
+  font-size: 18px;
+  color: #fff;
+}
+
+.contact-info-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--default-color), transparent 45%);
+  margin-bottom: 2px;
+}
+
+.contact-info-value {
+  display: block;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--heading-color);
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+}
+
+a.contact-info-value:hover {
+  color: var(--accent-color);
+}
+
+/* Social Row */
+.contact-social-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.contact-social-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--default-color), transparent 90%);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 82%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--heading-color) !important;
+  font-size: 17px;
+  text-decoration: none !important;
+  transition: background 0.26s ease, border-color 0.26s ease, transform 0.26s ease, box-shadow 0.26s ease;
+}
+
+.contact-social-btn:hover {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: #fff !important;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--accent-color), transparent 50%);
+}
+
+/* Form Panel (Right) */
+.contact-form-panel {
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  border-radius: 20px;
+  padding: 38px 36px;
   height: 100%;
-  padding: 30px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.06);
 }
 
-@media (max-width: 575px) {
-  .contact .php-email-form {
-    padding: 20px;
+.contact-field-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.contact-field-wrap label {
+  font-size: 13px;
+  font-weight: 600;
+  color: color-mix(in srgb, var(--heading-color), transparent 20%);
+  letter-spacing: 0.2px;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-field-wrap label i {
+  color: var(--accent-color);
+}
+
+.contact-input {
+  width: 100%;
+  background: color-mix(in srgb, var(--default-color), transparent 96%);
+  border: 1.5px solid color-mix(in srgb, var(--default-color), transparent 83%);
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 14.5px;
+  color: var(--default-color);
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  font-family: var(--default-font);
+}
+
+.contact-input::placeholder {
+  color: color-mix(in srgb, var(--default-color), transparent 55%);
+}
+
+.contact-input:focus {
+  border-color: var(--accent-color);
+  background: var(--surface-color);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent-color), transparent 84%);
+}
+
+.contact-textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+.contact-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 34px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #6c2bff 40%));
+  color: #fff;
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--accent-color), transparent 48%);
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.contact-submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px color-mix(in srgb, var(--accent-color), transparent 35%);
+}
+
+@media (max-width: 767px) {
+
+  .contact-info-panel,
+  .contact-form-panel {
+    padding: 28px 22px;
   }
 }
 
-.contact .php-email-form input[type=text],
-.contact .php-email-form input[type=email],
-.contact .php-email-form textarea {
-  font-size: 14px;
-  padding: 10px 15px;
-  box-shadow: none;
-  border-radius: 0;
-  color: var(--default-color);
-  background-color: var(--surface-color);
-  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
-}
-
-.contact .php-email-form input[type=text]:focus,
-.contact .php-email-form input[type=email]:focus,
-.contact .php-email-form textarea:focus {
-  border-color: var(--accent-color);
-}
-
-.contact .php-email-form input[type=text]::placeholder,
-.contact .php-email-form input[type=email]::placeholder,
-.contact .php-email-form textarea::placeholder {
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
-}
-
-.contact .php-email-form button[type=submit] {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-  border: 0;
-  padding: 10px 30px;
-  transition: 0.4s;
-  border-radius: 50px;
-}
-
-.contact .php-email-form button[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 25%);
-}
 
 /*--------------------------------------------------------------
 # Service Details Section
@@ -1610,4 +1713,318 @@ section,
 .cert-view-btn--full {
   flex: 1;
   justify-content: center;
+}
+
+/*--------------------------------------------------------------
+# About Section — CTA Buttons & Profile Image
+--------------------------------------------------------------*/
+.about-profile-img {
+  border-radius: 18px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.about-profile-img:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.18);
+}
+
+.about-cta-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.about-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 20px;
+  border-radius: 50px;
+  font-size: 13.5px;
+  font-weight: 600;
+  text-decoration: none !important;
+  border: 1.5px solid color-mix(in srgb, var(--default-color), transparent 75%);
+  color: var(--heading-color) !important;
+  background: transparent;
+  transition: all 0.26s ease;
+}
+
+.about-cta-btn:hover {
+  background: color-mix(in srgb, var(--default-color), transparent 92%);
+  border-color: color-mix(in srgb, var(--default-color), transparent 55%);
+  transform: translateY(-2px);
+}
+
+.about-cta-btn.about-cta-primary {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: #fff !important;
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--accent-color), transparent 55%);
+}
+
+.about-cta-btn.about-cta-primary:hover {
+  background: color-mix(in srgb, var(--accent-color), #000 12%);
+  border-color: color-mix(in srgb, var(--accent-color), #000 12%);
+  box-shadow: 0 12px 32px color-mix(in srgb, var(--accent-color), transparent 40%);
+}
+
+/*--------------------------------------------------------------
+# Services Section — Premium Service Cards
+--------------------------------------------------------------*/
+.service-card {
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  border-radius: 18px;
+  padding: 32px 28px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.32s ease, box-shadow 0.32s ease, border-color 0.32s ease;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 90% 10%,
+      color-mix(in srgb, var(--accent-color), transparent 88%) 0%,
+      transparent 55%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.11);
+  border-color: color-mix(in srgb, var(--accent-color), transparent 55%);
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.service-card-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--accent-color), transparent 88%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card-icon i {
+  font-size: 24px;
+  color: var(--accent-color);
+  transition: color 0.3s ease;
+}
+
+.service-card:hover .service-card-icon {
+  background: var(--accent-color);
+  box-shadow: 0 10px 28px color-mix(in srgb, var(--accent-color), transparent 45%);
+}
+
+.service-card:hover .service-card-icon i {
+  color: #fff;
+}
+
+.service-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.service-card-desc {
+  font-size: 14px;
+  line-height: 1.75;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  margin: 0;
+  flex-grow: 1;
+}
+
+.service-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 6px;
+}
+
+.service-card-tags span {
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 4px 11px;
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--accent-color), transparent 88%);
+  color: color-mix(in srgb, var(--accent-color), var(--heading-color) 25%);
+  letter-spacing: 0.3px;
+}
+
+/*--------------------------------------------------------------
+# Resume Section — PDF Button, Research Items, Languages
+--------------------------------------------------------------*/
+.resume-pdf-btn-wrap {
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+.resume-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #6c2bff 40%));
+  color: #fff !important;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none !important;
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--accent-color), transparent 50%);
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+  white-space: nowrap;
+}
+
+.resume-download-btn i {
+  font-size: 18px;
+}
+
+.resume-download-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px color-mix(in srgb, var(--accent-color), transparent 35%);
+  color: #fff !important;
+}
+
+/* Research Items */
+.resume-research-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.resume-research-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  border-radius: 14px;
+  padding: 18px 20px;
+  transition: transform 0.26s ease, box-shadow 0.26s ease, border-color 0.26s ease;
+}
+
+.resume-research-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  border-color: color-mix(in srgb, var(--accent-color), transparent 60%);
+}
+
+.resume-research-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--accent-color), transparent 88%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.resume-research-icon i {
+  font-size: 20px;
+  color: var(--accent-color);
+}
+
+.resume-research-item h5 {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--heading-color);
+  margin: 0 0 6px 0;
+  line-height: 1.5;
+}
+
+.resume-research-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #f59e0b;
+  background: rgba(245, 158, 11, 0.1);
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.3px;
+}
+
+.resume-research-status::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #f59e0b;
+  animation: pulse-dot 1.6s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(0.75);
+  }
+}
+
+/* Language Pills */
+.resume-lang-list {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.resume-lang-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  border-radius: 12px;
+}
+
+.resume-lang-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.resume-lang-level {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.3px;
+}
+
+.resume-lang-level.native {
+  background: color-mix(in srgb, var(--accent-color), transparent 85%);
+  color: color-mix(in srgb, var(--accent-color), var(--heading-color) 25%);
+}
+
+.resume-lang-level.fluent {
+  background: color-mix(in srgb, #22c55e, transparent 85%);
+  color: color-mix(in srgb, #22c55e, #000 35%);
 }
