@@ -12,22 +12,22 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Raleway", sans-serif;
-  --nav-font: "Poppins", sans-serif;
+  --default-font: "DM Sans", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --heading-font: "Plus Jakarta Sans", sans-serif;
+  --nav-font: "Montserrat", sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root {
-  --background-color: #ffffff;
+  --background-color: #0C0A09;
   /* Background color for the entire website, including individual sections */
-  --default-color: #272829;
+  --default-color: #C9C9C9;
   /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #050d18;
+  --heading-color: #F2F2F2;
   /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #149ddd;
+  --accent-color: #22C55E;
   /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff;
+  --surface-color: #131211;
   /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff;
   /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
@@ -35,15 +35,15 @@
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #a8a9b4;
+  --nav-color: #9ca3af;
   /* The default color of the main navmenu links */
   --nav-hover-color: #ffffff;
   /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #040b14;
+  --nav-mobile-background-color: #0C0A09;
   /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #040b14;
+  --nav-dropdown-background-color: #0C0A09;
   /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #a8a9b4;
+  --nav-dropdown-color: #9ca3af;
   /* Used for navigation links of the dropdown items in the navigation menu. */
   --nav-dropdown-hover-color: #ffffff;
   /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
@@ -52,15 +52,15 @@
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
-  --background-color: #f4fafd;
-  --surface-color: #ffffff;
+  --background-color: #131211;
+  --surface-color: #1A1917;
 }
 
 .dark-background {
-  --background-color: #040b14;
-  --default-color: #ffffff;
-  --heading-color: #ffffff;
-  --surface-color: #151f2b;
+  --background-color: #0C0A09;
+  --default-color: #C9C9C9;
+  --heading-color: #F2F2F2;
+  --surface-color: #131211;
   --contrast-color: #ffffff;
 }
 
@@ -76,6 +76,30 @@ body {
   color: var(--default-color);
   background-color: var(--background-color);
   font-family: var(--default-font);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Firefox thin scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(34, 197, 94, 0.3) #0C0A09;
+}
+
+/* WebKit (Chrome, Edge, Safari) main scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0C0A09;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(34, 197, 94, 0.3);
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(34, 197, 94, 0.55);
 }
 
 a {
@@ -167,13 +191,106 @@ h6 {
   overflow-y: auto;
   z-index: 997;
   border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  /* Firefox thin scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
 }
 
-.header .profile-img img {
-  margin: 15px auto;
+.header:hover {
+  scrollbar-color: rgba(34, 197, 94, 0.35) transparent;
+}
+
+/* WebKit (Chrome, Edge, Safari) thin scrollbar */
+.header::-webkit-scrollbar {
+  width: 4px;
+}
+
+.header::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.header::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 100px;
+  transition: background 0.3s ease;
+}
+
+.header:hover::-webkit-scrollbar-thumb {
+  background: rgba(34, 197, 94, 0.35);
+}
+
+.header::-webkit-scrollbar-thumb:hover {
+  background: rgba(34, 197, 94, 0.6);
+}
+
+.header .profile-img {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  margin: 38px auto 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.header .profile-img img:first-child {
+  position: relative;
+  z-index: 2;
   display: block;
   width: 120px;
-  border: 8px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid rgba(34, 197, 94, 0.2);
+  box-shadow:
+    0 0 12px rgba(34, 197, 94, 0.15),
+    0 0 30px rgba(34, 197, 94, 0.08),
+    0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Orbiting Skill Icons ── */
+.profile-orbit-icon {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #1A1917;
+  padding: 3px;
+  z-index: 3;
+  /* Start: hidden behind image center */
+  opacity: 0;
+  transform: rotate(var(--angle)) translateY(0px) rotate(calc(-1 * var(--angle))) scale(0);
+  /* Animate out */
+  animation:
+    orbit-appear 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) var(--delay) forwards,
+    orbit-float 3s ease-in-out calc(var(--delay) + 0.8s) infinite alternate;
+}
+
+/* Pop out from center to orbit radius */
+@keyframes orbit-appear {
+  0% {
+    opacity: 0;
+    transform: rotate(var(--angle)) translateY(0px) rotate(calc(-1 * var(--angle))) scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(var(--angle)) translateY(-76px) rotate(calc(-1 * var(--angle))) scale(1);
+  }
+}
+
+/* Gentle floating bob after landing */
+@keyframes orbit-float {
+  0% {
+    transform: rotate(var(--angle)) translateY(-76px) rotate(calc(-1 * var(--angle))) scale(1);
+  }
+
+  100% {
+    transform: rotate(var(--angle)) translateY(-80px) rotate(calc(-1 * var(--angle))) scale(1.08);
+  }
 }
 
 .header .logo {
@@ -707,8 +824,8 @@ section,
 
 .skill-pill:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.09);
-  border-color: color-mix(in srgb, var(--accent-color), transparent 55%);
+  box-shadow: 0 8px 22px rgba(34, 197, 94, 0.20);
+  border-color: color-mix(in srgb, var(--accent-color), transparent 45%);
 }
 
 .skill-pill img {
@@ -746,6 +863,26 @@ section,
 .resume-summary {
   border-left: 5px solid var(--accent-color);
   border-radius: 10px;
+  background-color: var(--surface-color) !important;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35) !important;
+  /* Force Bootstrap card text to use our light theme colors */
+  color: var(--default-color) !important;
+}
+
+.resume-summary p,
+.resume-summary li,
+.resume-summary li i,
+.resume-summary ul li a {
+  color: var(--default-color) !important;
+}
+
+.resume-summary h3,
+.resume-summary h4,
+.resume-summary h5 {
+  color: var(--heading-color) !important;
 }
 
 .resume-summary ul {
@@ -917,7 +1054,7 @@ section,
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 8px 20px color-mix(in srgb, var(--accent-color), transparent 52%);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--accent-color), transparent 68%);
 }
 
 .contact-info-icon i {
@@ -1048,15 +1185,15 @@ a.contact-info-value:hover {
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.3px;
-  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #6c2bff 40%));
+  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #15803d 40%));
   color: #fff;
-  box-shadow: 0 10px 30px color-mix(in srgb, var(--accent-color), transparent 48%);
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--accent-color), transparent 65%);
   transition: transform 0.28s ease, box-shadow 0.28s ease;
 }
 
 .contact-submit-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 16px 40px color-mix(in srgb, var(--accent-color), transparent 35%);
+  box-shadow: 0 8px 22px color-mix(in srgb, var(--accent-color), transparent 52%);
 }
 
 @media (max-width: 767px) {
@@ -1185,13 +1322,13 @@ a.contact-info-value:hover {
 .projects-content {
   position: relative;
   background:
-    radial-gradient(circle at 0 0, rgba(111, 66, 193, 0.08), transparent 55%),
-    radial-gradient(circle at 100% 100%, rgba(13, 110, 253, 0.08), transparent 55%),
+    radial-gradient(circle at 0 0, rgba(20, 120, 60, 0.10), transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(34, 197, 94, 0.08), transparent 55%),
     var(--surface-color);
   border-radius: 18px;
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
   overflow: hidden;
-  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.16);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.40);
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -1204,9 +1341,9 @@ a.contact-info-value:hover {
   inset: 0;
   pointer-events: none;
   background: linear-gradient(145deg,
-      rgba(255, 255, 255, 0.08),
+      rgba(255, 255, 255, 0.04),
       transparent 40%,
-      rgba(59, 130, 246, 0.12));
+      rgba(34, 197, 94, 0.10));
   opacity: 0;
   transition: opacity 0.35s ease;
 }
@@ -1297,8 +1434,8 @@ a.contact-info-value:hover {
 }
 
 .preview-link:hover {
-  background: rgba(59, 130, 246, 0.95);
-  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.55);
+  background: rgba(34, 197, 94, 0.95);
+  box-shadow: 0 10px 25px rgba(34, 197, 94, 0.55);
   color: #f9fafb;
 }
 
@@ -1590,6 +1727,12 @@ a.contact-info-value:hover {
   opacity: 0.88;
 }
 
+/* freeCodeCamp SVG logo is dark — tint it green on dark background */
+.cert-issuer-logo img[alt="freeCodeCamp"] {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(60%) saturate(500%) hue-rotate(100deg) brightness(95%);
+  opacity: 1;
+}
+
 .cert-issuer-fallback {
   width: 32px;
   height: 32px;
@@ -1720,13 +1863,13 @@ a.contact-info-value:hover {
 --------------------------------------------------------------*/
 .about-profile-img {
   border-radius: 18px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.50), 0 0 0 3px color-mix(in srgb, var(--accent-color), transparent 75%);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .about-profile-img:hover {
   transform: translateY(-6px);
-  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.55), 0 0 0 3px color-mix(in srgb, var(--accent-color), transparent 50%);
 }
 
 .about-cta-wrap {
@@ -1760,13 +1903,13 @@ a.contact-info-value:hover {
   background: var(--accent-color);
   border-color: var(--accent-color);
   color: #fff !important;
-  box-shadow: 0 8px 24px color-mix(in srgb, var(--accent-color), transparent 55%);
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--accent-color), transparent 68%);
 }
 
 .about-cta-btn.about-cta-primary:hover {
   background: color-mix(in srgb, var(--accent-color), #000 12%);
   border-color: color-mix(in srgb, var(--accent-color), #000 12%);
-  box-shadow: 0 12px 32px color-mix(in srgb, var(--accent-color), transparent 40%);
+  box-shadow: 0 6px 18px color-mix(in srgb, var(--accent-color), transparent 55%);
 }
 
 /*--------------------------------------------------------------
@@ -1883,12 +2026,12 @@ a.contact-info-value:hover {
   gap: 10px;
   padding: 12px 22px;
   border-radius: 50px;
-  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #6c2bff 40%));
+  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #15803d 40%));
   color: #fff !important;
   font-size: 14px;
   font-weight: 700;
   text-decoration: none !important;
-  box-shadow: 0 10px 30px color-mix(in srgb, var(--accent-color), transparent 50%);
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--accent-color), transparent 68%);
   transition: transform 0.28s ease, box-shadow 0.28s ease;
   white-space: nowrap;
 }
