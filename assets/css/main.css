@@ -706,18 +706,30 @@ section,
 
 .hero h2 {
   margin: 0;
+  font-family: var(--heading-font);
   font-size: 64px;
   font-weight: 700;
+  color: var(--heading-color);
+  letter-spacing: -1px;
 }
 
 .hero p {
-  margin: 5px 0 0 0;
+  margin: 10px 0 0 0;
+  font-family: var(--default-font);
   font-size: 26px;
+  color: var(--default-color);
 }
 
 .hero p span {
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   border-bottom: 2px solid var(--accent-color);
+}
+
+.hero p i {
+  color: var(--accent-color);
+  margin-left: 8px;
+  font-size: 0.9em;
+  vertical-align: middle;
 }
 
 .hero .social-links {
