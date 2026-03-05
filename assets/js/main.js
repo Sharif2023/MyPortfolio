@@ -1,4 +1,4 @@
-/**
+﻿/**
 * Template Name: iPortfolio
 * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
 * Updated: Jun 29 2024 with Bootstrap v5.3.3
@@ -218,7 +218,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Show loading state
       messages.style.display = "block";
       messages.className = "alert alert-info";
-      messages.innerHTML = "⏳ Sending message...";
+      messages.innerHTML = "â³ Sending message...";
 
       const formData = new FormData(form);
 
@@ -232,24 +232,105 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (response.ok) {
           messages.className = "alert alert-success";
-          messages.innerHTML = "✅ " + text;
+          messages.innerHTML = "âœ… " + text;
           form.reset();
         } else {
           messages.className = "alert alert-danger";
-          messages.innerHTML = "❌ " + text;
+          messages.innerHTML = "âŒ " + text;
         }
       } catch (error) {
         messages.className = "alert alert-danger";
-        messages.innerHTML = "❌ Error sending message. Please try again.";
+        messages.innerHTML = "âŒ Error sending message. Please try again.";
       }
     });
   }
 });
 
+// --- Dark / Light Mode Toggle ----------
+(function initTheme() {
+  const saved = localStorage.getItem("portfolio-theme") || "dark";
+  document.documentElement.setAttribute("data-theme", saved);
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.getElementById("theme-toggle-btn");
+    if (!btn) return;
+    updateToggleIcon();
+
+    btn.addEventListener("click", function () {
+      const current = document.documentElement.getAttribute("data-theme") || "dark";
+      const next = current === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      localStorage.setItem("portfolio-theme", next);
+      updateToggleIcon();
+    });
+  });
+
+  function updateToggleIcon() {
+    const btn = document.getElementById("theme-toggle-btn");
+    if (!btn) return;
+    const current = document.documentElement.getAttribute("data-theme") || "dark";
+    btn.innerHTML = current === "dark"
+      ? `<i class="bi bi-sun-fill"></i><span>Light Mode</span>`
+      : `<i class="bi bi-moon-fill"></i><span>Dark Mode</span>`;
+  }
+})();
+
+// --- Project Detail Cards ----------
 (async function loadGitHubProjects() {
   const username = "Sharif2023";
   const container = document.getElementById("github-projects");
   const fallback = document.getElementById("gh-fallback");
+
+  // -- Rich per-project metadata ----------
+  const PROJECT_META = {
+    "amar_recipies_reactjs": {
+      featured: true,
+      problem: "Finding authentic Bangladeshi recipes online is scattered and unreliable -” there's no dedicated, clean platform for home cooks.",
+      stack: ["React.js", "Tailwind CSS", "TheMealDB API", "Vercel"],
+      impact: "A live recipe sharing platform used by friends and family across Bangladesh. Deployed on Vercel with 100+ monthly visits and real user engagement.",
+      learning: "Mastered React Hooks, API integration, component architecture, and production deployment via Vercel CI/CD.",
+      credentials: [
+        { role: "Test User", user: "No login required to view recipes." },
+        { role: "Admin Panel", user: "sharifulislamut1@gmail.com", pass: "12345678", link: "https://amar-recipe.vercel.app/adminlogin" }
+      ]
+    },
+    "studynest": {
+      featured: false,
+      problem: "Students struggle to organise study materials, track their progress, and collaborate with peers in a single place.",
+      stack: ["PHP", "MySQL", "JavaScript", "Bootstrap"],
+      impact: "Built as a real study-management tool for UIU students -” helping organise notes, deadlines, and group study sessions.",
+      learning: "Deepened understanding of MVC architecture with PHP, session management, and database relational design."
+    },
+    "camsociety_laraval": {
+      featured: false,
+      problem: "University camera clubs lack a centralised digital platform to manage members, events, and photo galleries.",
+      stack: ["Laravel", "PHP", "MySQL", "Blade Templates", "Bootstrap"],
+      impact: "Built for UIU's camera society to manage memberships and showcase photography -” a real club management system.",
+      learning: "Gained hands-on expertise in Laravel's Eloquent ORM, middleware, role-based authentication, and MVC design."
+    },
+    "uiu-health-care": {
+      featured: false,
+      problem: "University students have no easy way to book appointments, access medical records, or communicate with on-campus doctors.",
+      stack: ["PHP", "MySQL", "JavaScript", "Bootstrap", "InfinityFree Hosting"],
+      impact: "A functional healthcare portal for UIU that simplifies student-doctor interactions and appointment booking -” live and accessible.",
+      learning: "Learned multi-role authentication systems, form validation, and real-world deployment on shared hosting.",
+      credentials: [
+        { role: "Student", user: "011221078", pass: "1234" },
+        { role: "Doctor", user: "D001", pass: "1234" }
+      ]
+    },
+    "uiusupplements": {
+      featured: false,
+      problem: "Local supplement retailers in Bangladesh have no professional e-commerce presence to reach campus customers.",
+      stack: ["PHP", "MySQL", "JavaScript", "Bootstrap"],
+      impact: "Helped a local business launch an online supplement store -” enabling product listing, cart, and order management for campus customers.",
+      learning: "Built a complete e-commerce flow including cart logic, order management, and admin dashboard from scratch.",
+      credentials: [
+        { role: "Student", user: "011221079", pass: "123456" },
+        { role: "Admin", user: "011221078", pass: "1234" }
+      ]
+    }
+  };
 
   // Only show these specific repositories (optionally with a Live Demo link)
   const PROJECTS = [
@@ -264,7 +345,7 @@ document.addEventListener("DOMContentLoaded", function () {
     PROJECTS.filter(p => p.live).map(p => [p.name.toLowerCase(), p.live])
   );
 
-  // --- cache (session) to avoid rate limits during browsing
+  // -- Session cache ----------
   const cacheKey = "gh_repos_with_commits_" + username;
   const cacheMins = 30;
 
@@ -281,44 +362,19 @@ document.addEventListener("DOMContentLoaded", function () {
     try { sessionStorage.setItem(cacheKey, JSON.stringify({ timestamp: Date.now(), data })); } catch { }
   };
 
-  // small concurrency limiter for commit requests
-  async function withConcurrency(items, limit, worker) {
-    const ret = [];
-    let i = 0;
-    const run = async () => {
-      while (i < items.length) {
-        const idx = i++;
-        ret[idx] = await worker(items[idx], idx);
-      }
-    };
-    const runners = Array.from({ length: Math.min(limit, items.length) }, run);
-    await Promise.all(runners);
-    return ret;
-  }
-
   try {
-    // 1) base repos (non-forks)
     let repos = readCache();
     if (!repos) {
-      // Use unauthenticated public GitHub API (sufficient for a personal portfolio)
       const res = await fetch(`https://api.github.com/users/${username}/repos?per_page=100&sort=updated`);
       if (!res.ok) throw new Error("GitHub API rate limit or network error");
       repos = (await res.json()).filter(r => !r.fork).slice(0, 30);
     }
 
-    // Filter to only configured repos (also works when coming from cache)
     repos = (repos || []).filter(r => ALLOWED_NAMES.has(String(r.name || "").toLowerCase()));
 
     let enriched;
     try {
-      const counts = repos.map(repo => ({
-        name: repo.name,
-        commits: 0
-      }));
-
-      const byName = Object.fromEntries(counts.map(c => [c.name, c.commits]));
-      enriched = repos.map(r => ({ ...r, __commits: byName[r.name] || 0 }));
-      // stable order: match the order in PROJECTS list
+      enriched = repos.map(r => ({ ...r, __commits: 0 }));
       enriched.sort((a, b) => {
         const aIdx = PROJECTS.findIndex(p => p.name.toLowerCase() === String(a.name || "").toLowerCase());
         const bIdx = PROJECTS.findIndex(p => p.name.toLowerCase() === String(b.name || "").toLowerCase());
@@ -326,55 +382,92 @@ document.addEventListener("DOMContentLoaded", function () {
       });
       writeCache(enriched);
     } catch {
-      // fallback: sort by recent update only
       enriched = repos.map(r => ({ ...r, __commits: 0 }))
         .sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at));
     }
 
-    // 3) render all configured projects
     const selected = enriched;
     if (!selected.length) { fallback.style.display = "block"; return; }
 
+    // -- Store project detail data globally for modal access ----------
+    window.__projectDetails = {};
+
+    // -- Card renderer ----------
     const makeItem = (repo) => {
       const repoUrl = repo.html_url;
       const title = repo.name;
+      const nameKey = String(repo.name || "").toLowerCase();
+      const sanitizedId = nameKey.replace(/[^a-z0-9]/g, "-");
       const languageLabel = repo.language || "Project";
-      const desc = repo.description || `${languageLabel} • Updated ${new Date(repo.pushed_at).toLocaleDateString()}`;
+      const desc = repo.description || `A ${languageLabel} project by Shariful Islam.`;
       const ogImage = `https://opengraph.githubassets.com/1/${username}/${encodeURIComponent(title)}`;
-      const liveUrl = LIVE_BY_NAME[String(repo.name || "").toLowerCase()] || "";
+      const liveUrl = LIVE_BY_NAME[nameKey] || "";
+      const meta = PROJECT_META[nameKey] || null;
+
       const lang = (repo.language || "App").toLowerCase();
-      const filterClass =
+      const baseFilterClass =
         lang.includes("php") || lang.includes("laravel") ? "filter-product" :
           lang.includes("js") || lang.includes("react") || lang.includes("node") ? "filter-app" :
             lang.includes("html") || lang.includes("css") ? "filter-branding" :
               "filter-books";
-      const commitBadge = `<span class="badge-commit" title="Total commits">${repo.__commits} commits</span>`;
-      const starBadge = repo.stargazers_count > 0 ? `<span class="badge-star">★ ${repo.stargazers_count}</span>` : "";
+
+      const isFeatured = meta && meta.featured;
+      const filterClass = isFeatured ? `${baseFilterClass} filter-featured` : baseFilterClass;
+
+      // Store details for modal
+      if (meta) {
+        window.__projectDetails[sanitizedId] = {
+          title, desc, ogImage, repoUrl, liveUrl, languageLabel, ...meta
+        };
+      }
+
+      // Live demo badge (pulsing, on thumbnail)
+      const liveBadge = liveUrl
+        ? `<a href="${liveUrl}" target="_blank" rel="noopener" class="badge-live-demo">
+             <i class="bi bi-broadcast-pin"></i> Live
+           </a>` : "";
+
+      // Featured chip (minimal, elegant)
+      const featuredChip = isFeatured
+        ? `<span class="proj-featured-chip"><i class="bi bi-star-fill"></i> Featured</span>` : "";
+
+      // Language dot color
+      const langDot = `<span class="proj-lang-dot" style="background:${getLangColor(lang)}"></span>`;
+
+      // Action buttons
       const liveBtn = liveUrl
-        ? `<a href="${liveUrl}" target="_blank" rel="noopener" class="btn btn-sm projects-btn projects-btn-live">
-             Live Demo <i class="bi bi-box-arrow-up-right"></i>
-           </a>`
-        : "";
+        ? `<a href="${liveUrl}" target="_blank" rel="noopener" class="proj-btn proj-btn-live">
+             <i class="bi bi-play-fill"></i> Live Demo
+           </a>` : "";
+
+      const detailBtn = meta
+        ? `<button class="proj-btn proj-btn-detail" onclick="openProjectModal('${sanitizedId}')">
+             <i class="bi bi-info-circle"></i> Details
+           </button>` : "";
 
       return `
-        <div class="col-lg-4 col-md-6 projects-item isotope-item ${filterClass}">
-          <div class="projects-content h-100">
-            <div class="gh-thumb-wrap">
-              <img src="${ogImage}" class="img-fluid gh-card-img" alt="${title}" onerror="this.src='assets/img/projects/app-1.jpg'">
-              <div class="gh-badges">${commitBadge}${starBadge}</div>
-              <a href="${ogImage}" title="${title}" data-gallery="projects-gallery-${filterClass}" class="glightbox preview-link">
-                <i class="bi bi-zoom-in"></i>
+        <div class="projects-item ${filterClass}" data-aos="fade-up">
+          <div class="proj-card${isFeatured ? " proj-card--featured" : ""}">
+            <div class="proj-thumb">
+              <img src="${ogImage}" alt="${title}" class="proj-thumb-img" onerror="this.src='assets/img/projects/app-1.jpg'">
+              <div class="proj-thumb-overlay"></div>
+              ${liveBadge}
+              ${featuredChip}
+              <a href="${ogImage}" data-gallery="projects-gallery-${filterClass}" class="glightbox proj-zoom" title="${title}">
+                <i class="bi bi-arrows-fullscreen"></i>
               </a>
             </div>
-            <div class="projects-info">
-              <div class="projects-header">
-                <h4>${title}</h4>
-                <span class="projects-pill">${languageLabel}</span>
+            <div class="proj-body">
+              <div class="proj-meta">
+                ${langDot}
+                <span class="proj-lang-label">${languageLabel}</span>
               </div>
-              <p>${desc}</p>
-              <div class="projects-actions">
-                <a href="${repoUrl}" target="_blank" rel="noopener" class="btn btn-sm projects-btn">
-                  Visit Repo <i class="bi bi-box-arrow-up-right"></i>
+              <h4 class="proj-title">${title.replace(/_/g, " ")}</h4>
+              <p class="proj-desc">${desc}</p>
+              <div class="proj-actions">
+                ${detailBtn}
+                <a href="${repoUrl}" target="_blank" rel="noopener" class="proj-btn proj-btn-repo">
+                  <i class="bi bi-github"></i> Repo
                 </a>
                 ${liveBtn}
               </div>
@@ -385,26 +478,167 @@ document.addEventListener("DOMContentLoaded", function () {
 
     container.innerHTML = selected.map(makeItem).join("");
 
-    // 4) Lightbox + Isotope reflow AFTER images load (prevents broken layouts)
+    // -- Initialize filter buttons ----------
+    const filterBtns = document.querySelectorAll(".projects-filter-btn");
+    filterBtns.forEach(btn => {
+      btn.addEventListener("click", function () {
+        const filterValue = this.getAttribute("data-filter");
+
+        // Update active button
+        filterBtns.forEach(b => b.classList.remove("active"));
+        this.classList.add("active");
+
+        // Filter projects
+        const items = document.querySelectorAll(".projects-item");
+        items.forEach(item => {
+          if (filterValue === "*") {
+            item.style.display = "block";
+            item.style.animation = "fadeInUp 0.6s ease-out backwards";
+          } else if (item.classList.contains(filterValue.substring(1))) {
+            item.style.display = "block";
+            item.style.animation = "fadeInUp 0.6s ease-out backwards";
+          } else {
+            item.style.display = "none";
+          }
+        });
+      });
+    });
+
+    // -- Inject modal into DOM (once) ----------
+    if (!document.getElementById("proj-modal")) {
+      const m = document.createElement("div");
+      m.id = "proj-modal";
+      m.className = "proj-modal-overlay";
+      m.setAttribute("role", "dialog");
+      m.setAttribute("aria-modal", "true");
+      m.innerHTML = `
+        <div class="proj-modal-box" id="proj-modal-box">
+          <button class="proj-modal-close" onclick="event.stopPropagation(); closeProjectModal();" aria-label="Close">
+            <i class="bi bi-x-lg"></i>
+          </button>
+          <div class="proj-modal-img-wrap">
+            <img src="" alt="" id="proj-modal-img" class="proj-modal-img">
+            <div class="proj-modal-img-overlay"></div>
+          </div>
+          <div class="proj-modal-content">
+            <div class="proj-modal-header">
+              <h3 id="proj-modal-title"></h3>
+              <span id="proj-modal-lang" class="proj-modal-lang-badge"></span>
+            </div>
+            <div id="proj-modal-body"></div>
+            <div class="proj-modal-actions" id="proj-modal-actions"></div>
+          </div>
+        </div>`;
+      document.body.appendChild(m);
+
+      // close on backdrop click
+      m.addEventListener("click", function (e) {
+        if (e.target === m) closeProjectModal();
+      });
+
+      // close on Escape (prevent multiple listeners)
+      const escapeHandler = function (e) {
+        if (e.key === "Escape" && m.classList.contains("open")) closeProjectModal();
+      };
+      document.addEventListener("keydown", escapeHandler);
+    }
+
+    // Lightbox reflow
     if (typeof GLightbox === "function") GLightbox({ selector: ".glightbox" });
 
-    // imagesLoaded & Isotope are already included by your template
-    const grid = container;
-    if (window.imagesLoaded) {
-      imagesLoaded(grid, function () {
-        if (window.Isotope) {
-          // use existing instance if template created one; otherwise create quickly
-          const iso = Isotope.data(grid) || new Isotope(grid, {
-            itemSelector: ".projects-item",
-            layoutMode: "masonry"
-          });
-          iso.reloadItems();
-          iso.layout();
-        }
-      });
-    }
+
   } catch (e) {
     console.error(e);
     fallback.style.display = "block";
   }
 })();
+
+// --- Language color helper ----------
+function getLangColor(lang) {
+  if (lang.includes("js") || lang.includes("react") || lang.includes("node")) return "#f1e05a";
+  if (lang.includes("php") || lang.includes("laravel")) return "#4f5d90";
+  if (lang.includes("python")) return "#3572a5";
+  if (lang.includes("html")) return "#e34c26";
+  if (lang.includes("css")) return "#563d7c";
+  return "#22c55e";
+}
+
+// --- Project Modal ----------
+function openProjectModal(sanitizedId) {
+  const data = window.__projectDetails && window.__projectDetails[sanitizedId];
+  if (!data) return;
+
+  // Populate image
+  const img = document.getElementById("proj-modal-img");
+  img.src = data.ogImage;
+  img.alt = data.title;
+
+  // Title & lang
+  document.getElementById("proj-modal-title").textContent = data.title.replace(/_/g, " ");
+  document.getElementById("proj-modal-lang").textContent = data.languageLabel;
+
+  // Body
+  const stackPills = (data.stack || []).map(t => `<span class="modal-stack-pill">${t}</span>`).join("");
+  document.getElementById("proj-modal-body").innerHTML = `
+    <div class="modal-section">
+      <span class="modal-section-label"><i class="bi bi-lightbulb-fill"></i> Problem</span>
+      <p>${data.problem || data.desc}</p>
+    </div>
+    <div class="modal-section">
+      <span class="modal-section-label"><i class="bi bi-stack"></i> Tech Stack</span>
+      <div class="modal-stack-list">${stackPills}</div>
+    </div>
+    <div class="modal-section">
+      <span class="modal-section-label"><i class="bi bi-globe2"></i> Real-World Impact</span>
+      <p>${data.impact}</p>
+    </div>
+    <div class="modal-section">
+      <span class="modal-section-label"><i class="bi bi-mortarboard-fill"></i> What I Learned</span>
+      <p>${data.learning}</p>
+    </div>`;
+
+  if (data.credentials && data.credentials.length > 0) {
+    const credHtml = data.credentials.map(c => `
+      <div style="background: rgba(255,255,255,0.05); padding: 8px 12px; border-radius: 8px; margin-bottom: 6px;">
+        <strong>${c.role}:</strong> ${c.link ? `<a href="${c.link}" target="_blank" style="color:var(--accent-color); font-size:12px; margin-left:8px;">[Login Page]</a>` : ''}<br/>
+        ID/Email: <code>${c.user}</code> ${c.pass ? `<br/>Password: <code>${c.pass}</code>` : ''}
+      </div>
+    `).join('');
+
+    const credBlock = document.createElement("div");
+    credBlock.className = "modal-section";
+    credBlock.innerHTML = `
+      <span class="modal-section-label"><i class="bi bi-key-fill"></i> Test Credentials</span>
+      ${credHtml}
+    `;
+    document.getElementById("proj-modal-body").appendChild(credBlock);
+  }
+
+  // Action buttons
+  const liveBtn = data.liveUrl
+    ? `<a href="${data.liveUrl}" target="_blank" rel="noopener" class="proj-btn proj-btn-live">
+         <i class="bi bi-play-fill"></i> Live Demo
+       </a>` : "";
+  document.getElementById("proj-modal-actions").innerHTML = `
+    <a href="${data.repoUrl}" target="_blank" rel="noopener" class="proj-btn proj-btn-repo">
+      <i class="bi bi-github"></i> View Repo
+    </a>
+    ${liveBtn}`;
+
+  // Show modal
+  const modal = document.getElementById("proj-modal");
+  modal.classList.add("open");
+  document.body.style.overflow = "hidden";
+
+  // Reset scroll position of modal box
+  const box = document.getElementById("proj-modal-box");
+  if (box) box.scrollTop = 0;
+}
+
+function closeProjectModal() {
+  const modal = document.getElementById("proj-modal");
+  if (modal) {
+    modal.classList.remove("open");
+    document.body.style.overflow = "";
+  }
+}
