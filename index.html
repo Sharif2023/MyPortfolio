@@ -4,9 +4,13 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Shariful Islam | Full-Stack Software Engineer</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <title>Shariful Islam | Full-Stack Web Developer</title>
+  <meta
+    content="Shariful Islam is a Full-Stack Web Developer and UI/UX Designer specialising in React, Laravel, Node.js and PHP. Based in Dhaka, Bangladesh — available for freelance and full-time opportunities."
+    name="description">
+  <meta
+    content="full-stack web developer, React developer, Laravel developer, Node.js, PHP, UI/UX designer, Dhaka, Bangladesh, portfolio, Shariful Islam"
+    name="keywords">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -96,6 +100,12 @@
         <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
       </ul>
     </nav>
+    <div class="theme-toggle-wrap">
+      <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle colour theme"
+        title="Toggle light / dark mode">
+        <i class="bi bi-sun-fill"></i><span>Light Mode</span>
+      </button>
+    </div>
   </header>
 
   <main class="main">
@@ -111,8 +121,8 @@
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <h2>Shariful Islam</h2>
-        <p>I'm <span class="typed"
-            data-typed-items="Web Developer &lt;i class='bi bi-laptop-fill'&gt;&lt;/i&gt;, Youtuber &lt;i class='bi bi-play-btn-fill'&gt;&lt;/i&gt;, Singer &lt;i class='bi bi-mic-fill'&gt;&lt;/i&gt;, Traveller &lt;i class='bi bi-airplane-fill'&gt;&lt;/i&gt;">Web
+        <p>I'm a <span class="typed"
+            data-typed-items="Full-Stack Developer &lt;i class='bi bi-laptop-fill'&gt;&lt;/i&gt;, React Developer &lt;i class='bi bi-code-slash'&gt;&lt;/i&gt;, Backend Developer &lt;i class='bi bi-hdd-stack-fill'&gt;&lt;/i&gt;, UI/UX Designer &lt;i class='bi bi-vector-pen'&gt;&lt;/i&gt;">Full-Stack
             Developer</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
       </div>
 
@@ -170,7 +180,45 @@
               AI interactions. I am driven by a vision to contribute to technology that is not only functional but
               meaningful.
             </p>
-            <div class="about-cta-wrap mt-2">
+
+            <!-- Personal Story -->
+            <div class="about-story-block" data-aos="fade-up">
+              <h4 class="about-story-title"><i class="bi bi-heart-fill"></i> My Journey</h4>
+              <p>
+                I fell in love with coding the day I realised a few lines of logic could become something thousands of
+                people actually use. Growing up in Dhaka, I was always curious about <em>how things work</em> — and web
+                development gave me the answer in the most tangible way possible. Every project I build starts with a
+                real human problem: how do we make daily life simpler, faster, or more connected?
+              </p>
+              <p>
+                What inspires me most is the open-source community — the idea that knowledge should be free and that
+                collaboration multiplies impact. I enjoy solving complex UX challenges: turning cluttered user flows
+                into
+                delightful, intuitive experiences. Whether it's a recipe app that feels like a friend's recommendation
+                or a healthcare portal that saves someone a trip to a clinic — I build things that
+                <strong>matter</strong>.
+              </p>
+            </div>
+
+            <!-- Soft Skills & Teamwork -->
+            <div class="about-softskills-block" data-aos="fade-up" data-aos-delay="100">
+              <h4 class="about-story-title"><i class="bi bi-people-fill"></i> Teamwork &amp; Soft Skills</h4>
+              <p>
+                I'm currently collaborating in a <strong>3-member research team</strong> on three academic papers
+                spanning green computing, AI-driven developer wellness, and GenAI interaction design — coordinating
+                research, literature reviews, and prototype development together.
+              </p>
+              <div class="softskill-tags">
+                <span><i class="bi bi-people"></i> Team Collaboration</span>
+                <span><i class="bi bi-journal-code"></i> Academic Research</span>
+                <span><i class="bi bi-lightbulb"></i> Problem Solving</span>
+                <span><i class="bi bi-chat-dots"></i> Communication</span>
+                <span><i class="bi bi-arrow-repeat"></i> Adaptability</span>
+                <span><i class="bi bi-stars"></i> Creative Thinking</span>
+              </div>
+            </div>
+
+            <div class="about-cta-wrap mt-4">
               <a href="https://www.linkedin.com/in/sharif-cse/" target="_blank" class="about-cta-btn">
                 <i class="bi bi-linkedin"></i> LinkedIn
               </a>
@@ -733,7 +781,7 @@
     <!-- /Resume Section -->
 
     <!-- Projects Section -->
-    <section id="projects" class="projects section light-background">
+    <section id="projects" class="projects section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
@@ -745,14 +793,20 @@
       </div><!-- End Section Title -->
 
       <div class="container">
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-          <div id="github-projects" class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-            <!-- GitHub projects will be injected here -->
-          </div>
+        <!-- Filter Buttons -->
+        <div class="projects-filter-wrapper" data-aos="fade-up" data-aos-delay="100">
+          <button class="projects-filter-btn active" data-filter="*">All Projects</button>
+          <button class="projects-filter-btn" data-filter=".filter-featured">Featured</button>
+          <button class="projects-filter-btn" data-filter=".filter-app">React & JS</button>
+          <button class="projects-filter-btn" data-filter=".filter-product">Laravel & PHP</button>
+          <button class="projects-filter-btn" data-filter=".filter-branding">Web</button>
+        </div>
+        <div id="github-projects" class="projects-grid" data-aos="fade-up" data-aos-delay="200">
+          <!-- GitHub projects will be injected here -->
+        </div>
 
-          <div id="gh-fallback" class="text-center small mt-3" style="display:none;">
-            Couldn’t load GitHub projects right now. Please refresh.
-          </div>
+        <div id="gh-fallback" class="text-center small mt-3" style="display:none;">
+          Couldn’t load GitHub projects right now. Please refresh.
         </div>
       </div>
 
@@ -875,17 +929,7 @@
     </section>
     <!-- /Services Section -->
 
-    <!-- Testimonials Section -->
-    <!-- Section Title -->
-    <div class="container" data-aos="fade-up" data-aos-delay="100">
-      <section id="testimonials" class="testimonials section light-background">
-        <div class="container section-title" data-aos="fade-up">
-          <h2>Testimonials</h2>
-          <p>Coming soon — I’ll add testimonials here once I earn them.</p>
-        </div>
-      </section>
-    </div><!-- End Section Title -->
-    </section><!-- /Testimonials Section -->
+    <!-- Testimonials section removed � real testimonials coming soon -->
 
     <!-- Contact Section -->
     <section id="contact" class="contact section light-background">
