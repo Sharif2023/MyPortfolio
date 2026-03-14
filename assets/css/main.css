@@ -3244,6 +3244,42 @@ a.contact-info-value:hover {
   border: 1px solid color-mix(in srgb, var(--accent-color), transparent 60%);
 }
 
+/* Learning Categories Structured Support */
+.modal-learning-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.learning-category {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.learning-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 2px;
+}
+
+.learning-header i {
+  color: var(--accent-color);
+  font-size: 14px;
+}
+
+.learning-category p {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: color-mix(in srgb, var(--default-color), transparent 15%);
+  margin: 0;
+  padding-left: 22px; /* indent under icon */
+}
+
 /* Modal footer buttons */
 .proj-modal-actions {
   display: flex;

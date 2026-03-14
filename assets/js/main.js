@@ -1,4 +1,4 @@
-﻿/**
+/**
 * Template Name: iPortfolio
 * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
 * Updated: Jun 29 2024 with Bootstrap v5.3.3
@@ -285,14 +285,32 @@ document.addEventListener("DOMContentLoaded", function () {
   const PROJECT_META = {
     "amar_recipies_reactjs": {
       featured: true,
-      problem: "Finding authentic Bangladeshi recipes online is scattered and unreliable -” there's no dedicated, clean platform for home cooks.",
-      stack: ["React.js", "Tailwind CSS", "TheMealDB API", "Vercel"],
-      impact: "A live recipe sharing platform used by friends and family across Bangladesh. Deployed on Vercel with 100+ monthly visits and real user engagement.",
-      learning: "Mastered React Hooks, API integration, component architecture, and production deployment via Vercel CI/CD.",
-      credentials: [
-        { role: "Test User", user: "No login required to view recipes." },
-        { role: "Admin Panel", user: "sharifulislamut1@gmail.com", pass: "12345678", link: "https://amar-recipe.vercel.app/adminlogin" }
-      ]
+      problem: "Finding authentic Bangladeshi recipes online is scattered and unreliable — there's no dedicated, clean platform for home cooks.",
+      stack: ["React.js", "Tailwind CSS", "PHP", "PostgreSQL", "Resend API", "Docker"],
+      impact: "A live recipe-sharing platform used by friends and family across Bangladesh, featuring a fully Bengali-localized user experience. The platform enables community interaction through recipe submissions, request posts, 5-star ratings, and reporting tools, while an administrative moderation system ensures content quality and safe community participation.",
+      learning: `
+        <div class="learning-category">
+          <span class="learning-header"><i class="bi bi-window-sidebar"></i> Modern Frontend Development</span>
+          <p>Built responsive, mobile-first interfaces using React and Tailwind CSS with a focus on reusable components, clean UI architecture, and smooth user interactions.</p>
+        </div>
+        <div class="learning-category">
+          <span class="learning-header"><i class="bi bi-database-lock"></i> Backend Engineering</span>
+          <p>Implemented secure PHP backend services including authentication with bcrypt, media upload handling, content moderation workflows, and API endpoints for real-time user interactions.</p>
+        </div>
+        <div class="learning-category">
+          <span class="learning-header"><i class="bi bi-cloud-check"></i> Deployment & Cloud Management</span>
+          <p>Configured containerized deployment environments, handled environment secrets, managed CORS policies, and integrated transactional email services via Resend API.</p>
+        </div>
+        <div class="learning-category">
+          <span class="learning-header"><i class="bi bi-diagram-3"></i> Database & System Design</span>
+          <p>Designed PostgreSQL schemas supporting recipe management, user roles, moderation logs, ratings, and reporting workflows to maintain data integrity and traceability.</p>
+        </div>
+        <div class="learning-category">
+          <span class="learning-header"><i class="bi bi-shield-lock"></i> Admin & Community Tools</span>
+          <p>Developed internal management tools such as multi-role admin dashboards and moderation utilities to streamline community governance and platform maintenance.</p>
+        </div>
+      `,
+      requiresContact: true
     },
     "studynest": {
       featured: false,
@@ -314,10 +332,7 @@ document.addEventListener("DOMContentLoaded", function () {
       stack: ["PHP", "MySQL", "JavaScript", "Bootstrap", "InfinityFree Hosting"],
       impact: "A functional healthcare portal for UIU that simplifies student-doctor interactions and appointment booking -” live and accessible.",
       learning: "Learned multi-role authentication systems, form validation, and real-world deployment on shared hosting.",
-      credentials: [
-        { role: "Student", user: "011221078", pass: "1234" },
-        { role: "Doctor", user: "D001", pass: "1234" }
-      ]
+      requiresContact: true
     },
     "uiusupplements": {
       featured: false,
@@ -325,10 +340,7 @@ document.addEventListener("DOMContentLoaded", function () {
       stack: ["PHP", "MySQL", "JavaScript", "Bootstrap"],
       impact: "Helped a local business launch an online supplement store -” enabling product listing, cart, and order management for campus customers.",
       learning: "Built a complete e-commerce flow including cart logic, order management, and admin dashboard from scratch.",
-      credentials: [
-        { role: "Student", user: "011221079", pass: "123456" },
-        { role: "Admin", user: "011221078", pass: "1234" }
-      ]
+      requiresContact: true
     }
   };
 
@@ -594,22 +606,20 @@ function openProjectModal(sanitizedId) {
     </div>
     <div class="modal-section">
       <span class="modal-section-label"><i class="bi bi-mortarboard-fill"></i> What I Learned</span>
-      <p>${data.learning}</p>
+      <div class="modal-learning-content">${data.learning}</div>
     </div>`;
 
-  if (data.credentials && data.credentials.length > 0) {
-    const credHtml = data.credentials.map(c => `
-      <div style="background: rgba(255,255,255,0.05); padding: 8px 12px; border-radius: 8px; margin-bottom: 6px;">
-        <strong>${c.role}:</strong> ${c.link ? `<a href="${c.link}" target="_blank" style="color:var(--accent-color); font-size:12px; margin-left:8px;">[Login Page]</a>` : ''}<br/>
-        ID/Email: <code>${c.user}</code> ${c.pass ? `<br/>Password: <code>${c.pass}</code>` : ''}
-      </div>
-    `).join('');
-
+  if (data.requiresContact) {
     const credBlock = document.createElement("div");
     credBlock.className = "modal-section";
+    credBlock.style.borderLeftColor = "#f59e0b"; // Amber color for notice
     credBlock.innerHTML = `
-      <span class="modal-section-label"><i class="bi bi-key-fill"></i> Test Credentials</span>
-      ${credHtml}
+      <span class="modal-section-label" style="color:#f59e0b"><i class="bi bi-shield-lock-fill"></i> Access Control</span>
+      <p style="font-size: 13px; font-style: italic;">
+        For security reasons, test credentials are not displayed publicly. 
+        Please <a href="#contact" onclick="closeProjectModal()" style="color:var(--accent-color); text-decoration:underline;">contact me</a> 
+        to request access for testing my projects.
+      </p>
     `;
     document.getElementById("proj-modal-body").appendChild(credBlock);
   }
