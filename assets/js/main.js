@@ -283,7 +283,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // -- Rich per-project metadata ----------
   const PROJECT_META = {
-    "amar_recipies_reactjs": {
+    "amar_recipe": {
       featured: true,
       thumbnail: "assets/project_thumbnail/amar_recipe.jpg",
       problem: "Finding authentic Bangladeshi recipes online is scattered and unreliable — there's no dedicated, clean platform for Food Lovers.",
@@ -365,10 +365,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Only show these specific repositories (optionally with a Live Demo link)
   const PROJECTS = [
-    { name: "Amar_Recipie", live: "https://amar-recipe.vercel.app/" },
+    { name: "Amar_Recipe", live: "https://amar-recipe.vercel.app/" },
     { name: "StudyNest" },
-    { name: "CamSociety", live: "https://camsociety-backend.onrender.com/" },
-    { name: "UIU Health Care", live: "https://uiu-healthcare.infinityfreeapp.com/" },
+    { name: "CamSociety_Laraval", live: "https://camsociety-backend.onrender.com/" },
+    { name: "UIU-Health-Care", live: "https://uiu-healthcare.infinityfreeapp.com/" },
     { name: "UIUSupplements", live: "http://uiusupplements.yzz.me/" },
   ];
   const ALLOWED_NAMES = new Set(PROJECTS.map(p => p.name.toLowerCase()));
@@ -425,15 +425,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // -- Card renderer ----------
     const makeItem = (repo) => {
-      const repoUrl = repo.html_url;
-      const title = repo.name;
       const nameKey = String(repo.name || "").toLowerCase();
       const sanitizedId = nameKey.replace(/[^a-z0-9]/g, "-");
-      const languageLabel = repo.language || "Project";
-      const desc = repo.description || `A ${languageLabel} project by Shariful Islam.`;
+      const meta = PROJECT_META[nameKey] || null;
+      const languageLabel = repo.language || "Web Application";
+      const desc = meta && meta.problem ? meta.problem : (repo.description || "");
+      const repoUrl = repo.html_url;
+      const title = repo.name;
       const ogImage = `https://opengraph.githubassets.com/1/${username}/${encodeURIComponent(title)}`;
       const liveUrl = LIVE_BY_NAME[nameKey] || "";
-      const meta = PROJECT_META[nameKey] || null;
       const thumbSrc = meta && meta.thumbnail ? meta.thumbnail : ogImage;
 
 
