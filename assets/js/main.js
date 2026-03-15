@@ -285,8 +285,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const PROJECT_META = {
     "amar_recipies_reactjs": {
       featured: true,
-      problem: "Finding authentic Bangladeshi recipes online is scattered and unreliable — there's no dedicated, clean platform for home cooks.",
-      stack: ["React.js", "Tailwind CSS", "PHP", "PostgreSQL", "Resend API", "Docker"],
+      thumbnail: "assets/project_thumbnail/amar_recipe.jpg",
+      problem: "Finding authentic Bangladeshi recipes online is scattered and unreliable — there's no dedicated, clean platform for Food Lovers.",
+      stack: ["React", "Vite", "Tailwind CSS", "PHP", "PostgreSQL (Supabase)", "Vercel", "Render", "Docker", "Resend API"],
       impact: "A live recipe-sharing platform used by friends and family across Bangladesh, featuring a fully Bengali-localized user experience. The platform enables community interaction through recipe submissions, request posts, 5-star ratings, and reporting tools, while an administrative moderation system ensures content quality and safe community participation.",
       learning: `
         <div class="learning-category">
@@ -299,7 +300,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
         <div class="learning-category">
           <span class="learning-header"><i class="bi bi-cloud-check"></i> Deployment & Cloud Management</span>
-          <p>Configured containerized deployment environments, handled environment secrets, managed CORS policies, and integrated transactional email services via Resend API.</p>
+          <p>Deployed the full-stack application using <strong>Vercel (frontend), Render with Docker (backend services),</strong> and <strong>Supabase PostgreSQL (database)</strong>. Managed environment variables, production secrets, CORS configuration, and integrated transactional email delivery using the Resend API.</p>
         </div>
         <div class="learning-category">
           <span class="learning-header"><i class="bi bi-diagram-3"></i> Database & System Design</span>
@@ -307,13 +308,14 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
         <div class="learning-category">
           <span class="learning-header"><i class="bi bi-shield-lock"></i> Admin & Community Tools</span>
-          <p>Developed internal management tools such as multi-role admin dashboards and moderation utilities to streamline community governance and platform maintenance.</p>
+          <p>Built a multi-role admin dashboard enabling administrators to view, edit, and remove recipes, verify user recipe submissions, and manage content reports through role-based moderation. Implemented a root admin layer to control admin roles, approve new admin requests, and manage platform staff. The system also includes chat, notifications, moderation history, privacy settings, and profile management to support efficient community governance.</p>
         </div>
       `,
       requiresContact: true
     },
     "studynest": {
       featured: false,
+      thumbnail: "assets/project_thumbnail/studynest.jpg",
       problem: "Students struggle to organise study materials, track their progress, and collaborate with peers in a single place.",
       stack: ["PHP", "MySQL", "JavaScript", "Bootstrap"],
       impact: "Built as a real study-management tool for UIU students -” helping organise notes, deadlines, and group study sessions.",
@@ -321,13 +323,28 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     "camsociety_laraval": {
       featured: false,
-      problem: "University camera clubs lack a centralised digital platform to manage members, events, and photo galleries.",
-      stack: ["Laravel", "PHP", "MySQL", "Blade Templates", "Bootstrap"],
-      impact: "Built for UIU's camera society to manage memberships and showcase photography -” a real club management system.",
-      learning: "Gained hands-on expertise in Laravel's Eloquent ORM, middleware, role-based authentication, and MVC design."
+      thumbnail: "assets/project_thumbnail/camsociety.jpg",
+      problem: "Professional photographers often struggle to find a centralized platform that combines a marketplace for digital assets with a robust system for finding and booking local event assignments. Clients also lack a transparent, verified way to hire professionals directly.",
+      stack: ["Laravel 11 (PHP 8.2)", "React 18", "Inertia.js", "Vite", "Tailwind CSS", "Headless UI", "MySQL/SQLite", "Docker", "Render", "SMTP/Mailtrap"],
+      impact: "Streamlined the photography gig economy by providing a centralized marketplace for assets and a reliable booking pipeline. This professionalized the connection between creators and clients, enabling photographers to monetize their work instantly while reducing booking friction for organizers.",
+      learning: `
+        <div class="learning-category">
+          <span class="learning-header"><i class="bi bi-window-sidebar"></i> Modern Full-Stack Integration</span>
+          <p>Gained hands-on experience in building a full-stack application by integrating Laravel with React via Inertia.js, creating a seamless single-page application experience with a powerful backend.</p>
+        </div>
+        <div class="learning-category">
+          <span class="learning-header"><i class="bi bi-shield-lock"></i> Advanced Authentication & Security</span>
+          <p>Developed practical skills in managing multi-role authentication, implementing secure database transactions, and ensuring data integrity across complex workflows.</p>
+        </div>
+        <div class="learning-category">
+          <span class="learning-header"><i class="bi bi-box-seam"></i> DevOps & Cloud Deployment</span>
+          <p>Practical experience in configuring Dockerized environments for consistent development and seamless cloud deployment on Render, along with SMTP configuration for robust communication.</p>
+        </div>
+      `
     },
     "uiu-health-care": {
       featured: false,
+      thumbnail: "assets/project_thumbnail/uiu_health_care.jpg",
       problem: "University students have no easy way to book appointments, access medical records, or communicate with on-campus doctors.",
       stack: ["PHP", "MySQL", "JavaScript", "Bootstrap", "InfinityFree Hosting"],
       impact: "A functional healthcare portal for UIU that simplifies student-doctor interactions and appointment booking -” live and accessible.",
@@ -336,20 +353,22 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     "uiusupplements": {
       featured: false,
+      thumbnail: "assets/project_thumbnail/uiu_supplements.jpg",
       problem: "Local supplement retailers in Bangladesh have no professional e-commerce presence to reach campus customers.",
       stack: ["PHP", "MySQL", "JavaScript", "Bootstrap"],
       impact: "Helped a local business launch an online supplement store -” enabling product listing, cart, and order management for campus customers.",
       learning: "Built a complete e-commerce flow including cart logic, order management, and admin dashboard from scratch.",
       requiresContact: true
     }
+
   };
 
   // Only show these specific repositories (optionally with a Live Demo link)
   const PROJECTS = [
-    { name: "Amar_Recipies_ReactJS", live: "https://amar-recipe.vercel.app/" },
+    { name: "Amar_Recipie", live: "https://amar-recipe.vercel.app/" },
     { name: "StudyNest" },
-    { name: "CamSociety_Laraval" },
-    { name: "UIU-Health-Care", live: "https://uiu-healthcare.infinityfreeapp.com/" },
+    { name: "CamSociety", live: "https://camsociety-backend.onrender.com/" },
+    { name: "UIU Health Care", live: "https://uiu-healthcare.infinityfreeapp.com/" },
     { name: "UIUSupplements", live: "http://uiusupplements.yzz.me/" },
   ];
   const ALLOWED_NAMES = new Set(PROJECTS.map(p => p.name.toLowerCase()));
@@ -415,6 +434,8 @@ document.addEventListener("DOMContentLoaded", function () {
       const ogImage = `https://opengraph.githubassets.com/1/${username}/${encodeURIComponent(title)}`;
       const liveUrl = LIVE_BY_NAME[nameKey] || "";
       const meta = PROJECT_META[nameKey] || null;
+      const thumbSrc = meta && meta.thumbnail ? meta.thumbnail : ogImage;
+
 
       const lang = (repo.language || "App").toLowerCase();
       const baseFilterClass =
@@ -461,11 +482,11 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="projects-item ${filterClass}" data-aos="fade-up">
           <div class="proj-card${isFeatured ? " proj-card--featured" : ""}">
             <div class="proj-thumb">
-              <img src="${ogImage}" alt="${title}" class="proj-thumb-img" onerror="this.src='assets/img/projects/app-1.jpg'">
+              <img src="${thumbSrc}" alt="${title}" class="proj-thumb-img" onerror="this.src='assets/img/projects/app-1.jpg'">
               <div class="proj-thumb-overlay"></div>
               ${liveBadge}
               ${featuredChip}
-              <a href="${ogImage}" data-gallery="projects-gallery-${filterClass}" class="glightbox proj-zoom" title="${title}">
+              <a href="${thumbSrc}" data-gallery="projects-gallery-${filterClass}" class="glightbox proj-zoom" title="${title}">
                 <i class="bi bi-arrows-fullscreen"></i>
               </a>
             </div>
@@ -582,8 +603,10 @@ function openProjectModal(sanitizedId) {
 
   // Populate image
   const img = document.getElementById("proj-modal-img");
-  img.src = data.ogImage;
+  const thumbSrc = data.thumbnail || data.ogImage;
+  img.src = thumbSrc;
   img.alt = data.title;
+
 
   // Title & lang
   document.getElementById("proj-modal-title").textContent = data.title.replace(/_/g, " ");
