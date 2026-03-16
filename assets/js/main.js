@@ -356,8 +356,36 @@ document.addEventListener("DOMContentLoaded", function () {
       thumbnail: "assets/project_thumbnail/uiu_supplements.jpg",
       problem: "Local supplement retailers in Bangladesh have no professional e-commerce presence to reach campus customers.",
       stack: ["PHP", "MySQL", "JavaScript", "Bootstrap"],
-      impact: "Helped a local business launch an online supplement store -” enabling product listing, cart, and order management for campus customers.",
+      impact: "Helped a local business launch an online supplement store — enabling product listing, cart, and order management for campus customers.",
       learning: "Built a complete e-commerce flow including cart logic, order management, and admin dashboard from scratch.",
+      requiresContact: true
+    },
+    "service-booking-platform": {
+      featured: true,
+      thumbnail: "assets/project_thumbnail/servicehub.jpg",
+      problem: "Traditional service booking methods are often inefficient, lacking a centralized platform for both users and administrators to manage complex scheduling and payments professionally.",
+      stack: ["React", "Vite", "Tailwind CSS", "Node.js", "Express", "PostgreSQL", "Stripe", "Nodemailer", "JWT"],
+      impact: "Full-stack enterprise service booking platform used for professional service management, featuring a dynamic catalog, multi-step booking engine, and administrative control center. It streamlines the connection between service providers and clients through secure transactions and automated communication.",
+      learning: `
+        <div class="learning-category">
+          <span class="learning-header"><i class="bi bi-diagram-3"></i> Enterprise Architecture & Database</span>
+          <p>Architected a robust backend with PostgreSQL, implementing connection pooling and optimized indexing for high-performance data retrieval and transaction management in an enterprise environment.</p>
+        </div>
+        <div class="learning-category">
+          <span class="learning-header"><i class="bi bi-shield-lock"></i> Advanced Security & RBAC</span>
+          <p>Implemented industry-standard security measures including bcrypt hashing, JWT-based authentication, and a comprehensive Admin Dashboard with role-based access control (RBAC).</p>
+        </div>
+        <div class="learning-category">
+          <span class="learning-header"><i class="bi bi-credit-card"></i> API Integration & Automation</span>
+          <p>Integrated Stripe API for PCI-compliant payment processing with secure webhooks, and engineered an automated email notification system using Nodemailer with HTML templates.</p>
+        </div>
+        <div class="learning-category">
+          <span class="learning-header"><i class="bi bi-shield-check"></i> Access Control & Reliability Testing</span>
+          <p><strong>Multi-Level Guards:</strong> Implemented AuthMiddleware and AdminRoute to ensure only verified users can book and only authorized admins can access business analytics.</p>
+          <p><strong>Payment Success Scenario:</strong> Verified robust handling of successful transactions using Stripe's test card (4242 4242 4242 4242), triggering automated database updates and confirmation emails.</p>
+          <p><strong>Edge Case Handling:</strong> Validated system resilience against payment failures using declined card simulation (4000 0000 0000 0002), ensuring graceful user feedback without data corruption.</p>
+        </div>
+      `,
       requiresContact: true
     }
 
@@ -369,6 +397,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { name: "StudyNest" },
     { name: "CamSociety_Laraval", live: "https://camsociety-backend.onrender.com/" },
     { name: "UIU-Health-Care", live: "https://uiu-healthcare.infinityfreeapp.com/" },
+    { name: "Service-Booking-Platform", live: "https://servicehub-platform.vercel.app/" },
     { name: "UIUSupplements", live: "http://uiusupplements.yzz.me/" },
   ];
   const ALLOWED_NAMES = new Set(PROJECTS.map(p => p.name.toLowerCase()));
