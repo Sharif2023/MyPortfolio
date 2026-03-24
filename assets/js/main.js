@@ -314,12 +314,36 @@ document.addEventListener("DOMContentLoaded", function () {
       requiresContact: true
     },
     "studynest": {
-      featured: false,
+      featured: true,
       thumbnail: "assets/project_thumbnail/studynest.jpg",
-      problem: "Students struggle to organise study materials, track their progress, and collaborate with peers in a single place.",
-      stack: ["PHP", "MySQL", "JavaScript", "Bootstrap"],
-      impact: "Built as a real study-management tool for UIU students -” helping organise notes, deadlines, and group study sessions.",
-      learning: "Deepened understanding of MVC architecture with PHP, session management, and database relational design."
+      problem: "University students often face academic isolation and fragmented study habits. StudyNest unifies the student journey by providing a centralized digital campus for live interactive sessions, AI-aided document analysis, and peer-validated resources.",
+      stack: ["React 19", "Framer Motion", "Three.js", "Bento Grid", "Vercel Serverless PHP", "Node.js", "WebSockets", "Python/Flask", "PostgreSQL (NHost)", "Cloudinary", "Render", "JWT"],
+      impact: "Enhanced Collaboration: Thousands of potential study hours facilitated via low-latency synchronized video rooms and virtual whiteboards. AI-Powered Learning: Automates the analysis of complex study materials, providing instant summaries and anti-plagiarism guardrails for students. Academic Social Proof: Builds a competitive yet supportive community through global rankings and professional-grade Q&A interactions. (Production sessions securely backed by PDO PostgreSQL on NHost).",
+      learning: `
+        <div class="learning-category">
+          <span class="learning-header"><i class="bi bi-clouds"></i> Multi-Cloud Orchestration</span>
+          <p>Coordinating multiple backend runtimes (PHP, Node, Python) into a seamless, unified user experience across Vercel and Render.</p>
+        </div>
+        <div class="learning-category">
+          <span class="learning-header"><i class="bi bi-broadcast"></i> Scalable Real-time Architecture</span>
+          <p>Implementing WebRTC for media streams and WebSockets for real-time state sync across multiple concurrent users.</p>
+        </div>
+        <div class="learning-category">
+          <span class="learning-header"><i class="bi bi-palette"></i> Ultra-Premium UI/UX Engineering</span>
+          <p>Designing high-performance, animated interfaces that feel "alive" through advanced CSS, motion libraries (Framer Motion), and 3D shaders (Three.js).</p>
+        </div>
+        <div class="learning-category notice-box" style="margin-top: 20px; padding: 15px; background: rgba(var(--accent-color-rgb), 0.1); border-left: 4px solid var(--accent-color); border-radius: 4px;">
+          <span class="learning-header" style="color: var(--accent-color); font-weight: 700;"><i class="bi bi-info-circle-fill"></i> IMPORTANT: Deployment Note</span>
+          <p style="margin-bottom: 10px;">StudyNest is a distributed project across Vercel and Render. Initial service spin-up may take a few moments on the first load.</p>
+          
+          <span class="learning-header" style="color: var(--accent-color); font-weight: 700;"><i class="bi bi-person-badge"></i> UIU Student ID & Email Patterns</span>
+          <ul style="list-style: disc; margin-left: 20px; font-size: 0.9em;">
+            <li><strong>Student ID Pattern:</strong> A 9-digit code (e.g., 011 223 344). First 3 digits represent Dept (011=CSE, 111=BBA), followed by Batch/Year (221), and Serial Number.</li>
+            <li><strong>Email Pattern (Official):</strong> &lt;FirstInitial&gt;&lt;LastName&gt;&lt;Last6DigitsOfID&gt;@&lt;program&gt;.uiu.ac.bd</li>
+            <li><strong>Simplified/App:</strong> [student_id]@stu.uiu.ac.bd is commonly used for secondary portal logins.</li>
+          </ul>
+        </div>
+      `
     },
     "camsociety_laraval": {
       featured: false,
@@ -394,7 +418,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Only show these specific repositories (optionally with a Live Demo link)
   const PROJECTS = [
     { name: "Amar_Recipe", live: "https://amar-recipe.vercel.app/" },
-    { name: "StudyNest" },
+    { name: "StudyNest", live: "https://studynest-edu.vercel.app/" },
     { name: "CamSociety_Laraval", live: "https://camsociety-backend.onrender.com/" },
     { name: "UIU-Health-Care", live: "https://uiu-healthcare.infinityfreeapp.com/" },
     { name: "Service-Booking-Platform", live: "https://servicehub-platform.vercel.app/" },
