@@ -544,10 +544,7 @@ document.addEventListener("DOMContentLoaded", function () {
               </a>
             </div>
             <div class="proj-body">
-              <div class="proj-meta">
-                ${langDot}
-                <span class="proj-lang-label">${languageLabel}</span>
-              </div>
+
               <h4 class="proj-title">${title.replace(/_/g, " ")}</h4>
               <p class="proj-desc">${desc}</p>
               <div class="proj-actions">

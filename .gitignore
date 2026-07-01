@@ -1,0 +1,16 @@
+# System Files
+.DS_Store
+Thumbs.db
+
+# Source Files & Sensitive Data
+resume.tex
+*.log
+.env
+.env.*
+
+# IDE / Editor Files
+.vscode/
+.idea/
+
+# Note: .gitignore only prevents files from being uploaded to GitHub.
+# It DOES NOT prevent people from viewing or copying your code from the live website.
