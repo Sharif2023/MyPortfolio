@@ -429,49 +429,28 @@ document.addEventListener("DOMContentLoaded", function () {
     PROJECTS.filter(p => p.live).map(p => [p.name.toLowerCase(), p.live])
   );
 
-  // -- Session cache ----------
-  const cacheKey = "gh_repos_with_commits_" + username;
-  const cacheMins = 30;
+  // -- Bypass GitHub API Rate Limits by hardcoding basic repo data ----------
+  // We already have all the rich data in PROJECT_META, so we just need minimal
+  // mock objects to pass into the card renderer.
+  const selected = PROJECTS.map(p => {
+    return {
+      name: p.name,
+      html_url: `https://github.com/${username}/${p.name}`,
+      description: "", // Will be overridden by PROJECT_META.problem
+      language: getLanguageFromMeta(p.name)
+    };
+  });
+  
+  function getLanguageFromMeta(name) {
+    const meta = PROJECT_META[name.toLowerCase()];
+    if (!meta || !meta.stack || !meta.stack.length) return "Web Application";
+    const stack = meta.stack.join(" ").toLowerCase();
+    if (stack.includes("react")) return "JavaScript";
+    if (stack.includes("laravel") || stack.includes("php")) return "PHP";
+    return "JavaScript";
+  }
 
-  const readCache = () => {
-    try {
-      const raw = sessionStorage.getItem(cacheKey);
-      if (!raw) return null;
-      const { timestamp, data } = JSON.parse(raw);
-      if (Date.now() - timestamp > cacheMins * 60 * 1000) return null;
-      return data;
-    } catch { return null; }
-  };
-  const writeCache = (data) => {
-    try { sessionStorage.setItem(cacheKey, JSON.stringify({ timestamp: Date.now(), data })); } catch { }
-  };
-
-  try {
-    let repos = readCache();
-    if (!repos) {
-      const res = await fetch(`https://api.github.com/users/${username}/repos?per_page=100&sort=updated`);
-      if (!res.ok) throw new Error("GitHub API rate limit or network error");
-      repos = (await res.json()).filter(r => !r.fork).slice(0, 30);
-    }
-
-    repos = (repos || []).filter(r => ALLOWED_NAMES.has(String(r.name || "").toLowerCase()));
-
-    let enriched;
-    try {
-      enriched = repos.map(r => ({ ...r, __commits: 0 }));
-      enriched.sort((a, b) => {
-        const aIdx = PROJECTS.findIndex(p => p.name.toLowerCase() === String(a.name || "").toLowerCase());
-        const bIdx = PROJECTS.findIndex(p => p.name.toLowerCase() === String(b.name || "").toLowerCase());
-        return (aIdx === -1 ? 999 : aIdx) - (bIdx === -1 ? 999 : bIdx);
-      });
-      writeCache(enriched);
-    } catch {
-      enriched = repos.map(r => ({ ...r, __commits: 0 }))
-        .sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at));
-    }
-
-    const selected = enriched;
-    if (!selected.length) { fallback.style.display = "block"; return; }
+  if (!selected.length) { fallback.style.display = "block"; return; }
 
     // -- Store project detail data globally for modal access ----------
     window.__projectDetails = {};
@@ -630,10 +609,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (typeof GLightbox === "function") GLightbox({ selector: ".glightbox" });
 
 
-  } catch (e) {
-    console.error(e);
-    fallback.style.display = "block";
-  }
+  // Removed dangling catch block
 })();
 
 // --- Language color helper ----------
