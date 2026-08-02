@@ -180,7 +180,9 @@ h6 {
 --------------------------------------------------------------*/
 .header {
   color: var(--default-color);
-  background-color: var(--background-color);
+  background-color: color-mix(in srgb, var(--background-color), transparent 25%);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   position: fixed;
   top: 0;
   left: 0;
@@ -844,12 +846,14 @@ section,
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  background: var(--surface-color);
+  background: color-mix(in srgb, var(--surface-color), transparent 30%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 86%);
   border-radius: 10px;
   padding: 9px 16px;
   cursor: default;
-  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease, filter 0.22s ease;
 }
 
 .skill-pill:hover {
@@ -863,6 +867,11 @@ section,
   height: 28px;
   object-fit: contain;
   flex-shrink: 0;
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.skill-pill:hover img[src*="devicon"] {
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.4)) !important;
 }
 
 /* Monotone SVG icons (e.g. Postman) — tinted via mask */
@@ -1700,7 +1709,9 @@ a.contact-info-value:hover {
 # Certifications Section
 --------------------------------------------------------------*/
 .cert-card {
-  background: var(--surface-color);
+  background: color-mix(in srgb, var(--surface-color), transparent 20%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-radius: 14px;
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
   display: flex;
@@ -2702,8 +2713,10 @@ a.contact-info-value:hover {
 /* New card wrapper */
 .proj-card {
   background: linear-gradient(145deg,
-      var(--surface-color) 0%,
-      color-mix(in srgb, var(--surface-color), rgba(34, 197, 94, 0.06) 100%) 100%);
+      color-mix(in srgb, var(--surface-color), transparent 25%) 0%,
+      color-mix(in srgb, var(--surface-color), transparent 15%) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 87%);
   border-radius: 16px;
   overflow: hidden;

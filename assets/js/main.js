@@ -540,6 +540,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     container.innerHTML = selected.map(makeItem).join("");
 
+    // Initialize 3D Tilt Effect for Project Cards
+    setTimeout(() => {
+      if (typeof VanillaTilt !== 'undefined') {
+        VanillaTilt.init(document.querySelectorAll(".proj-card"), {
+          max: 8,
+          speed: 400,
+          glare: true,
+          "max-glare": 0.15
+        });
+      }
+    }, 100);
+
     // -- Initialize filter buttons ----------
     const filterBtns = document.querySelectorAll(".projects-filter-btn");
     filterBtns.forEach(btn => {

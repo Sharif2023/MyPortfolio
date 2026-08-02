@@ -1500,6 +1500,20 @@
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
+  <!-- VanillaTilt.js for 3D Card Effects -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" defer></script>
+  <script defer>
+    document.addEventListener("DOMContentLoaded", function() {
+      if (typeof VanillaTilt !== 'undefined') {
+        VanillaTilt.init(document.querySelectorAll(".cert-card"), {
+          max: 8,
+          speed: 400,
+          glare: true,
+          "max-glare": 0.15
+        });
+      }
+    });
+  </script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js" defer></script>
