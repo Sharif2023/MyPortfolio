@@ -11,8 +11,8 @@ export default function Contact() {
     const form = e.target;
     const data = new FormData(form);
     try {
-      // NOTE: Get your free access key from https://web3forms.com/ and replace 'YOUR_ACCESS_KEY_HERE'
-      data.append("access_key", "bed346e6-7265-4c12-86c4-68106ed663f6");
+      // Access the key from the .env file using Vite's import.meta.env
+      data.append("access_key", import.meta.env.VITE_WEB3FORMS_ACCESS_KEY);
       
       const res = await fetch('https://api.web3forms.com/submit', { 
         method: 'POST', 
