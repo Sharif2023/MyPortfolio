@@ -1,16 +1,35 @@
-# System Files
-.DS_Store
-Thumbs.db
-
-# Source Files & Sensitive Data
-resume.tex
+# Logs
+logs
 *.log
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Local env files
 .env
-.env.*
+.env.local
+.env.*.local
 
-# IDE / Editor Files
-.vscode/
-.idea/
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
-# Note: .gitignore only prevents files from being uploaded to GitHub.
-# It DOES NOT prevent people from viewing or copying your code from the live website.
+# OS
+Thumbs.db

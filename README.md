@@ -1,47 +1,65 @@
-# 🚀 Shariful Islam – Portfolio Website
+# Shariful Islam — Portfolio
 
-Welcome to my personal portfolio website!  
-Here you’ll find my **projects, skills, certifications, and contact details** – all in one place.
+Personal portfolio built with **React + Vite**, deployed on **Vercel**.
 
-🌐 **Live Website:** [engineer-sharif.infinityfreeapp.com](https://engineer-sharif.infinityfreeapp.com/)
+## Tech Stack
+- ⚛️ React 19 + Vite 8
+- 🎨 Vanilla CSS (ported from original design)
+- ✨ AOS (scroll animations) · Typed.js (hero typewriter) · VanillaTilt (3D cards)
+- 🚀 Vercel (hosting + SPA routing)
 
----
+## Local Development
 
-## 📌 About
-I’m **Shariful Islam**, a passionate **Computer Science & Engineering student** specializing in:
+```bash
+npm install
+npm run dev
+```
 
-- Web Development (Frontend & Backend)
-- UI/UX Design (Figma, Prototyping)
-- Database Systems
-- Full-Stack Application Development
+Open [http://localhost:5173](http://localhost:5173)
 
----
+## Production Build
 
-## 🛠️ Tech Stack
-- **Frontend:** HTML, CSS, JavaScript, React, Bootstrap, Tailwind CSS  
-- **Backend:** Node.js, PHP, Laravel  
-- **Databases:** MySQL, MongoDB  
-- **Tools & Others:** Git, GitHub, Figma  
+```bash
+npm run build
+```
 
----
+Output goes to `dist/` — Vercel picks this up automatically.
 
-## 📸 Preview
-Here’s a quick look at my portfolio website:  
+## Vercel Deployment
 
-![Portfolio Screenshot](assets/img/my-profile-img.jpg) <!-- Replace with an actual screenshot if possible -->
+1. Push to GitHub
+2. Import repo in [vercel.com](https://vercel.com)
+3. Framework preset: **Vite**
+4. Build command: `npm run build`
+5. Output directory: `dist`
+6. Hit **Deploy** ✅
 
----
+> **Note:** The contact form (`/forms/contact.php`) requires a PHP-capable server. On Vercel (Node-only), wire it up via a Vercel Serverless Function or use [Resend](https://resend.com) / [Formspree](https://formspree.io) for static email delivery.
 
-## 🔗 Links
-- 🌐 [Portfolio Website](https://engineer-sharif.infinityfreeapp.com/)  
-- 💻 [GitHub Profile](https://github.com/Sharif2023)  
+## Project Structure
 
----
-
-## 📬 Contact
-📧 Email: **sharifislam0505@gmail.com**  
-📍 Dhaka, Bangladesh  
-
----
-
-© 2025 Shariful Islam – All Rights Reserved
+```
+src/
+├── components/       # All React section components
+│   ├── Header.jsx
+│   ├── Hero.jsx
+│   ├── About.jsx
+│   ├── Skills.jsx
+│   ├── Projects.jsx
+│   ├── ProjectModal.jsx
+│   ├── Experience.jsx
+│   ├── Resume.jsx
+│   ├── Certifications.jsx
+│   ├── Services.jsx
+│   ├── Contact.jsx
+│   ├── Footer.jsx
+│   ├── ScrollTop.jsx
+│   └── Preloader.jsx
+├── data/
+│   └── portfolioData.js  # All content data (projects, certs, skills)
+├── styles/
+│   └── main.css          # Full design system CSS
+└── App.jsx               # Root component
+public/
+└── assets/               # Images, certifications, resume PDF
+```
