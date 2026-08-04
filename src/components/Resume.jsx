@@ -15,14 +15,14 @@ export default function Resume() {
               <p className="fst-italic mb-3">Dedicated Software Engineer with hands-on experience building full-stack web applications. I bridge the gap between beautiful UI and robust backend engineering — delivering scalable, production-ready solutions.</p>
               <ul className="mt-2">
                 <li><i className="bi bi-geo-alt" /> Mugdapara, Dhaka-1214, Bangladesh</li>
-                <li><i className="bi bi-telephone" /> +880 1700 871179</li>
+                <li><i className="bi bi-telephone" /> +8801700871179</li>
                 <li><i className="bi bi-envelope" /> sharifislam0505@gmail.com</li>
                 <li><i className="bi bi-linkedin" /> <a href="https://www.linkedin.com/in/si-sharif/" target="_blank" rel="noopener noreferrer">linkedin.com/in/si-sharif</a></li>
                 <li><i className="bi bi-github" /> <a href="https://github.com/sharif2023" target="_blank" rel="noopener noreferrer">github.com/Sharif2023</a></li>
               </ul>
             </div>
             <div className="resume-pdf-btn-wrap">
-              <a href="/assets/resume/resume.pdf" target="_blank" rel="noopener noreferrer" className="resume-download-btn">
+              <a href="/assets/resume/Shariful_Islam_Resume.pdf" target="_blank" rel="noopener noreferrer" className="resume-download-btn">
                 <i className="bi bi-file-earmark-pdf" /><span>View PDF Resume</span>
               </a>
             </div>
@@ -75,7 +75,7 @@ export default function Resume() {
 
             <h3 className="resume-title mt-5 mb-4"><i className="bi bi-translate me-2" /> Languages</h3>
             <div className="timeline">
-              {[{ lang: 'Bangla', level: 'Native / Fluent' }, { lang: 'English', level: 'Native / Fluent' }].map(l => (
+              {[{ lang: 'Bangla', level: 'Native / Fluent' }, { lang: 'English', level: 'Professional Working Proficiency' }].map(l => (
                 <div className="timeline-item" key={l.lang}>
                   <div className="timeline-marker" />
                   <div className="timeline-content">

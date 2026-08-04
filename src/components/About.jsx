@@ -23,7 +23,7 @@ export default function About() {
                 <ul>
                   <li><i className="bi bi-chevron-right" /> <strong>Birthday:</strong> <span>6 December, 2001</span></li>
                   <li><i className="bi bi-chevron-right" /> <strong>Degree:</strong> <span>B.Sc. in CSE</span></li>
-                  <li><i className="bi bi-chevron-right" /> <strong>Phone:</strong> <span>+880 1700 871179</span></li>
+                  <li><i className="bi bi-chevron-right" /> <strong>Phone:</strong> <span>+8801700871179</span></li>
                   <li><i className="bi bi-chevron-right" /> <strong>City:</strong> <span>Mugdapara, Dhaka-1214</span></li>
                 </ul>
               </div>
@@ -65,7 +65,7 @@ export default function About() {
             <div className="about-cta-wrap mt-5">
               <a href="https://www.linkedin.com/in/si-sharif/" target="_blank" rel="noopener noreferrer" className="about-cta-btn"><i className="bi bi-linkedin" /> LinkedIn</a>
               <a href="https://github.com/sharif2023" target="_blank" rel="noopener noreferrer" className="about-cta-btn"><i className="bi bi-github" /> GitHub</a>
-              <a href="/assets/resume/resume.pdf" target="_blank" rel="noopener noreferrer" className="about-cta-btn about-cta-primary"><i className="bi bi-file-earmark-person" /> View Resume</a>
+              <a href="/assets/resume/Shariful_Islam_Resume.pdf" target="_blank" rel="noopener noreferrer" className="about-cta-btn about-cta-primary"><i className="bi bi-file-earmark-person" /> View Resume</a>
             </div>
           </div>
         </div>

@@ -1,13 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { PROJECTS } from '../data/portfolioData';
 
-const getLangColor = lang => {
-  if (!lang) return '#22c55e';
-  const l = lang.toLowerCase();
-  if (l.includes('javascript')) return '#f1e05a';
-  if (l.includes('php')) return '#4f5d90';
-  return '#22c55e';
-};
+
 
 export default function Projects({ onOpenModal }) {
   const tiltRef = useRef(null);
@@ -49,10 +43,7 @@ export default function Projects({ onOpenModal }) {
                 <div className="proj-body">
                   <h4 className="proj-title">{p.name}</h4>
                   <p className="proj-desc">{p.problem}</p>
-                  <div className="proj-lang-row">
-                    <span className="proj-lang-dot" style={{ background: getLangColor(p.language) }} />
-                    <span className="proj-lang-label">{p.language}</span>
-                  </div>
+
                   <div className="proj-actions">
                     <button className="proj-btn proj-btn-detail" onClick={() => onOpenModal(p)}>
                       <i className="bi bi-info-circle" /> Details

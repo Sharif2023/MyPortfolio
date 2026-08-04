@@ -54,7 +54,7 @@ export default function Contact() {
               <div className="contact-info-items">
                 {[
                   { icon: 'bi-geo-alt-fill', label: 'Location', value: 'Mugdapara, Dhaka, Bangladesh', href: null },
-                  { icon: 'bi-telephone-fill', label: 'Phone', value: '+880 1700 871179', href: 'tel:+8801700871179' },
+                  { icon: 'bi-telephone-fill', label: 'Phone', value: '+8801700871179', href: 'tel:+8801700871179' },
                   { icon: 'bi-envelope-fill', label: 'Email', value: 'sharifislam0505@gmail.com', href: 'mailto:sharifislam0505@gmail.com' },
                 ].map(item => (
                   <div className="contact-info-item" key={item.label}>
