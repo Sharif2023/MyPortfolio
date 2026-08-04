@@ -36,3 +36,5 @@ Thumbs.db
 
 # InfinityFree
 infinityfree_redirect.htaccess
+.vercel
+.env*
