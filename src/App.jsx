@@ -39,16 +39,21 @@ function App() {
 
   useEffect(() => {
     const sections = document.querySelectorAll('section[id]');
-    const handleScroll = () => {
-      const pos = window.scrollY + 200;
-      sections.forEach(s => {
-        if (pos >= s.offsetTop && pos <= s.offsetTop + s.offsetHeight) {
-          setActiveSection(s.id);
+    
+    // Using IntersectionObserver eliminates "Layout Thrashing" (reading offsetTop on every scroll frame)
+    // which is the primary cause of entire-site scroll lag.
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
         }
       });
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    }, {
+      rootMargin: '-30% 0px -60% 0px'
+    });
+
+    sections.forEach((s) => observer.observe(s));
+    return () => observer.disconnect();
   }, [loading]);
 
   const toggleTheme = () => setTheme(t => t === 'dark' ? 'light' : 'dark');
