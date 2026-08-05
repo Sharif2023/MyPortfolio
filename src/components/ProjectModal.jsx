@@ -24,7 +24,11 @@ export default function ProjectModal({ project, onClose }) {
         <button className="proj-modal-close" onClick={onClose} aria-label="Close"><i className="bi bi-x-lg" /></button>
 
         <div className="proj-modal-img-wrap">
-          <img src={project.thumbnail} alt={project.name} className="proj-modal-img" />
+          {project.thumbnail.endsWith('.mp4') ? (
+            <video src={project.thumbnail} autoPlay loop muted playsInline className="proj-modal-img" style={{ objectFit: 'cover', objectPosition: 'center', width: '100%', height: '100%', transform: 'scale(1.25) translateY(-8%)' }} />
+          ) : (
+            <img src={project.thumbnail} alt={project.name} className="proj-modal-img" />
+          )}
           <div className="proj-modal-img-overlay" />
         </div>
 

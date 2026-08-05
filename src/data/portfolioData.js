@@ -127,6 +127,24 @@ export const PROJECTS = [
     learning: "<p>Built a complete e-commerce flow including cart logic, order management, and admin dashboard from scratch.</p>",
     requiresContact: true 
   },
+  { 
+    name: "Interactive Resume Builder", key: "resume-builder", live: "https://sharif2023.github.io/MySortProjects/Resume%20Builder/index.html", github: "https://github.com/Sharif2023/MySortProjects", 
+    thumbnail: "assets/project_thumbnail/resume.mp4", featured: true, language: "JavaScript", category: "Frontend",
+    problem: "Job seekers need a quick, reliable way to build and test multiple resume formats without dealing with complex software or paid subscriptions.", 
+    stack: ["HTML5", "Vanilla JavaScript", "Tailwind CSS", "PDF Generation", "DOM Manipulation"], 
+    impact: "A fully client-side resume builder that allows users to input their data once and preview it across multiple professional templates in real-time. Features one-click PDF downloading and responsive editing.", 
+    learning: `
+      <div class="learning-category">
+        <span class="learning-header"><i class="bi bi-window-sidebar"></i> Vanilla JS State Management</span>
+        <p>Engineered a robust state management system without external frameworks, instantly syncing user inputs across multiple live DOM templates.</p>
+      </div>
+      <div class="learning-category">
+        <span class="learning-header"><i class="bi bi-file-earmark-pdf"></i> PDF Generation</span>
+        <p>Implemented client-side PDF rendering ensuring pixel-perfect exports directly from the browser's DOM structure.</p>
+      </div>
+    `,
+    requiresContact: false 
+  },
 ];
 
 export const CERTIFICATIONS = [

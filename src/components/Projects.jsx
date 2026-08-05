@@ -112,7 +112,11 @@ export default function Projects({ onOpenModal }) {
               >
                 <div className={`proj-card${p.featured ? ' proj-card--featured' : ''}`}>
                   <div className="proj-thumb">
-                    <img src={p.thumbnail} alt={p.name} className="proj-thumb-img" loading="lazy" />
+                    {p.thumbnail.endsWith('.mp4') ? (
+                      <video src={p.thumbnail} autoPlay loop muted playsInline className="proj-thumb-img" style={{ objectFit: 'cover', objectPosition: 'center', width: '100%', height: '100%', transform: 'scale(1.25) translateY(-8%)' }} />
+                    ) : (
+                      <img src={p.thumbnail} alt={p.name} className="proj-thumb-img" loading="lazy" />
+                    )}
                     <div className="proj-thumb-overlay" />
                     {p.live && (
                       <a href={p.live} target="_blank" rel="noopener noreferrer" className="badge-live-demo">
