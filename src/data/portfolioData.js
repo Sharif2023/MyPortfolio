@@ -1,7 +1,7 @@
 export const PROJECTS = [
   { 
     name: "Amar Recipe", key: "amar_recipe", live: "https://amar-recipe.vercel.app/", github: "https://github.com/Sharif2023/Amar_Recipe", 
-    thumbnail: "assets/project_thumbnail/amar_recipe.jpg", featured: true, language: "JavaScript", 
+    thumbnail: "assets/project_thumbnail/amar_recipe.jpg", featured: true, language: "JavaScript", category: "Full-Stack",
     problem: "Finding authentic Bangladeshi recipes online is scattered and unreliable — there's no dedicated, clean platform for Food Lovers.", 
     stack: ["React", "Vite", "Tailwind CSS", "PHP", "PostgreSQL (Supabase)", "Vercel", "Render", "Docker", "Resend API"], 
     impact: "A live recipe-sharing platform used by friends and family across Bangladesh, featuring a fully Bengali-localized user experience. The platform enables community interaction through recipe submissions, request posts, 5-star ratings, and reporting tools, while an administrative moderation system ensures content quality and safe community participation.", 
@@ -31,7 +31,7 @@ export const PROJECTS = [
   },
   { 
     name: "StudyNest", key: "studynest", live: "https://studynest-edu.vercel.app/", github: "https://github.com/Sharif2023/StudyNest", 
-    thumbnail: "assets/project_thumbnail/studynest.jpg", featured: true, language: "JavaScript", 
+    thumbnail: "assets/project_thumbnail/studynest.jpg", featured: true, language: "JavaScript", category: "Full-Stack",
     problem: "University students often face academic isolation and fragmented study habits. StudyNest unifies the student journey by providing a centralized digital campus for live interactive sessions, AI-aided document analysis, and peer-validated resources.", 
     stack: ["React 19", "Framer Motion", "Three.js", "Bento Grid", "Vercel Serverless PHP", "Node.js", "WebSockets", "Python/Flask", "PostgreSQL (NHost)", "Cloudinary", "Render", "JWT"], 
     impact: "Enhanced Collaboration: Thousands of potential study hours facilitated via low-latency synchronized video rooms and virtual whiteboards. AI-Powered Learning: Automates the analysis of complex study materials, providing instant summaries and anti-plagiarism guardrails for students. Academic Social Proof: Builds a competitive yet supportive community through global rankings and professional-grade Q&A interactions. (Production sessions securely backed by PDO PostgreSQL on NHost).",
@@ -62,7 +62,7 @@ export const PROJECTS = [
   },
   { 
     name: "CamSociety Laraval", key: "camsociety_laraval", live: "https://camsociety-backend.onrender.com/", github: "https://github.com/Sharif2023/CamSociety_Laraval", 
-    thumbnail: "assets/project_thumbnail/camsociety.jpg", featured: false, language: "PHP", 
+    thumbnail: "assets/project_thumbnail/camsociety.jpg", featured: false, language: "PHP", category: "Frontend",
     problem: "Professional photographers often struggle to find a centralized platform that combines a marketplace for digital assets with a robust system for finding and booking local event assignments. Clients also lack a transparent, verified way to hire professionals directly.", 
     stack: ["Laravel 11 (PHP 8.2)", "React 18", "Inertia.js", "Vite", "Tailwind CSS", "Headless UI", "MySQL/SQLite", "Docker", "Render", "SMTP/Mailtrap"], 
     impact: "Streamlined the photography gig economy by providing a centralized marketplace for assets and a reliable booking pipeline. This professionalized the connection between creators and clients, enabling photographers to monetize their work instantly while reducing booking friction for organizers.",
@@ -83,7 +83,7 @@ export const PROJECTS = [
   },
   { 
     name: "UIU Health Care", key: "uiu-health-care", live: "https://uiu-healthcare.infinityfreeapp.com/", github: "https://github.com/Sharif2023/UIU-Health-Care", 
-    thumbnail: "assets/project_thumbnail/uiu_health_care.jpg", featured: false, language: "PHP", 
+    thumbnail: "assets/project_thumbnail/uiu_health_care.jpg", featured: false, language: "PHP", category: "Full-Stack",
     problem: "University students have no easy way to book appointments, access medical records, or communicate with on-campus doctors.", 
     stack: ["PHP", "MySQL", "JavaScript", "Bootstrap", "InfinityFree Hosting"], 
     impact: "A functional healthcare portal for UIU that simplifies student-doctor interactions and appointment booking - live and accessible.", 
@@ -92,7 +92,7 @@ export const PROJECTS = [
   },
   { 
     name: "Service Booking Platform", key: "service-booking-platform", live: "https://servicehub-platform.vercel.app/", github: "https://github.com/Sharif2023/Service-Booking-Platform", 
-    thumbnail: "assets/project_thumbnail/servicehub.jpg", featured: true, language: "JavaScript", 
+    thumbnail: "assets/project_thumbnail/servicehub.jpg", featured: true, language: "JavaScript", category: "Full-Stack",
     problem: "Traditional service booking methods are often inefficient, lacking a centralized platform for both users and administrators to manage complex scheduling and payments professionally.", 
     stack: ["React", "Vite", "Tailwind CSS", "Node.js", "Express", "PostgreSQL", "Stripe", "Nodemailer", "JWT"], 
     impact: "Full-stack enterprise service booking platform used for professional service management, featuring a dynamic catalog, multi-step booking engine, and administrative control center. It streamlines the connection between service providers and clients through secure transactions and automated communication.", 
@@ -120,7 +120,7 @@ export const PROJECTS = [
   },
   { 
     name: "UIUSupplements", key: "uiusupplements", live: "http://uiusupplements.yzz.me/", github: "https://github.com/Sharif2023/UIUSupplements", 
-    thumbnail: "assets/project_thumbnail/uiu_supplements.jpg", featured: false, language: "PHP", 
+    thumbnail: "assets/project_thumbnail/uiu_supplements.jpg", featured: false, language: "PHP", category: "Full-Stack",
     problem: "Local supplement retailers in Bangladesh have no professional e-commerce presence to reach campus customers.", 
     stack: ["PHP", "MySQL", "JavaScript", "Bootstrap"], 
     impact: "Helped a local business launch an online supplement store — enabling product listing, cart, and order management for campus customers.", 
