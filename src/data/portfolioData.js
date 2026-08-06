@@ -163,6 +163,32 @@ export const PROJECTS = [
     `,
     requiresContact: false 
   },
+  { 
+    name: "JavaScript Micro-Applications Suite", key: "js-micro-apps", live: "https://sharif2023.github.io/Javascript-Short-Projects/", github: "https://github.com/Sharif2023/Javascript-Short-Projects", 
+    thumbnail: "assets/project_thumbnail/javascript-short-projects.mp4", featured: false, language: "JavaScript", category: "Frontend",
+    problem: "Developers often rely on heavy frameworks for basic tasks. This project demanded building a unified, highly optimized hub for 11 distinct tools ranging from complex calculators to utilities.", 
+    stack: ["Vanilla JavaScript (ES6+)", "HTML5", "Advanced CSS3", "Bento Grid"], 
+    impact: "A centralized portfolio showcase featuring 11 fully interactive web applications. It serves as a single, unified hub branching out into various distinct tools and games, proving a deep understanding of raw DOM manipulation and complex algorithmic logic.", 
+    learning: `
+      <div class="learning-category">
+        <span class="learning-header"><i class="bi bi-window-sidebar"></i> Design Systems & UI Consistency</span>
+        <p>Architected a unified "Glassmorphism" design system across 11 separate codebases, maintaining strict UX/UI standards and brand consistency across a wide ecosystem of apps.</p>
+      </div>
+      <div class="learning-category">
+        <span class="learning-header"><i class="bi bi-lightning-charge"></i> Performance Optimization</span>
+        <p>Engineered high-performance radial-gradient backgrounds that deliver a premium neon aesthetic with 0% performance hit, completely avoiding heavy CSS backdrop-filter properties that lag the browser's GPU.</p>
+      </div>
+      <div class="learning-category">
+        <span class="learning-header"><i class="bi bi-grid-1x2"></i> Advanced Layouts & Mouse-Tracking</span>
+        <p>Utilized a modern responsive "Bento Grid" layout for the landing page, featuring custom JavaScript mouse-tracking to create interactive, math-based hover effects on the project cards.</p>
+      </div>
+      <div class="learning-category">
+        <span class="learning-header"><i class="bi bi-braces"></i> Vanilla JS Mastery & Edge-Case Handling</span>
+        <p>Built completely without external frameworks (no React, no Vue), handling complex logic engines (Calculators, Password Generators) and edge-cases like dynamic text wrapping and fluid typography (clamp()) for pixel-perfect responsiveness on any device.</p>
+      </div>
+    `,
+    requiresContact: false 
+  },
 ];
 
 export const CERTIFICATIONS = [

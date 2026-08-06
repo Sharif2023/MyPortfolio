@@ -25,7 +25,7 @@ export default function ProjectModal({ project, onClose }) {
 
         <div className="proj-modal-img-wrap">
           {project.thumbnail.endsWith('.mp4') ? (
-            <video src={project.thumbnail} autoPlay loop muted playsInline className="proj-modal-img" style={{ objectFit: 'cover', objectPosition: 'center', width: '100%', height: '100%', transform: 'scale(1.25) translateY(-8%)' }} />
+            <video src={project.thumbnail} autoPlay loop muted playsInline className="proj-modal-img" style={{ objectFit: 'cover', objectPosition: 'center', width: '100%', height: '100%', transform: project.key === 'resume-builder' ? 'scale(1.25) translateY(-8%)' : 'none' }} />
           ) : (
             <img src={project.thumbnail} alt={project.name} className="proj-modal-img" />
           )}
