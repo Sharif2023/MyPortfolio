@@ -129,7 +129,7 @@ export const PROJECTS = [
   },
   { 
     name: "Interactive Resume Builder", key: "resume-builder", live: "https://sharif2023.github.io/MySortProjects/Resume%20Builder/index.html", github: "https://github.com/Sharif2023/MySortProjects", 
-    thumbnail: "assets/project_thumbnail/resume.mp4", featured: true, language: "JavaScript", category: "Frontend",
+    thumbnail: "assets/project_thumbnail/resume.mp4", featured: true, language: "JavaScript", category: "Others",
     problem: "Job seekers need a quick, reliable way to build and test multiple resume formats without dealing with complex software or paid subscriptions.", 
     stack: ["HTML5", "Vanilla JavaScript", "Tailwind CSS", "PDF Generation", "DOM Manipulation"], 
     impact: "A fully client-side resume builder that allows users to input their data once and preview it across multiple professional templates in real-time. Features one-click PDF downloading and responsive editing.", 
@@ -141,6 +141,24 @@ export const PROJECTS = [
       <div class="learning-category">
         <span class="learning-header"><i class="bi bi-file-earmark-pdf"></i> PDF Generation</span>
         <p>Implemented client-side PDF rendering ensuring pixel-perfect exports directly from the browser's DOM structure.</p>
+      </div>
+    `,
+    requiresContact: false 
+  },
+  { 
+    name: "Bangladesh Nature Parallax", key: "parallax-website", live: "https://sharif2023.github.io/MySortProjects/Parallax/parallax.html", github: "https://github.com/Sharif2023/MySortProjects", 
+    thumbnail: "assets/project_thumbnail/parallax.mp4", featured: false, language: "HTML/CSS", category: "Others",
+    problem: "Showcasing the natural beauty of Bangladesh through an engaging, immersive visual experience without relying on heavy frontend frameworks.", 
+    stack: ["HTML5", "CSS3", "Parallax Scrolling", "UI Design"], 
+    impact: "A visually striking single-page website that leverages CSS parallax scrolling to create depth and immersion, focusing purely on frontend aesthetics and fluid user interactions.", 
+    learning: `
+      <div class="learning-category">
+        <span class="learning-header"><i class="bi bi-layers"></i> Advanced CSS Parallax</span>
+        <p>Mastered pure CSS parallax techniques using background attachments, 3D transforms, and perspective scaling to create smooth, highly performant scroll effects without relying on JavaScript libraries.</p>
+      </div>
+      <div class="learning-category">
+        <span class="learning-header"><i class="bi bi-palette"></i> Immersive UI Design</span>
+        <p>Focused intensely on typography, spacing, and visual hierarchy to create a premium, magazine-like digital experience that highlights landscape photography.</p>
       </div>
     `,
     requiresContact: false 
