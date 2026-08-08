@@ -81,6 +81,32 @@ export const PROJECTS = [
       </div>
     `
   },
+  {
+    name: "Linkora", key: "linkora", live: "https://linkora-hub.vercel.app/", github: "https://github.com/Sharif2023/Linkora",
+    thumbnail: "assets/project_thumbnail/linkora.mp4", featured: true, language: "TypeScript", category: "Frontend",
+    problem: "Developers and AI researchers lack a centralized, visually organized workspace to manage essential web links, platforms, and UI frameworks effectively.",
+    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "lucide-react"],
+    impact: "A high-performance 'Intelligence Workspace' and curated resource directory. It serves as a centralized hub for organizing and discovering over 150+ essential developer utilities with blazing fast SEO optimization.",
+    learning: `
+      <div class="learning-category">
+        <span class="learning-header"><i class="bi bi-diagram-3"></i> Dynamic Data Architecture</span>
+        <p>Engineered a dynamic platform powered by a single source of truth. The landing page statistics, dashboard metrics, and sidebar categories dynamically calculate and update themselves based on the raw dataset.</p>
+      </div>
+      <div class="learning-category">
+        <span class="learning-header"><i class="bi bi-search"></i> Lightning-Fast Search Engine</span>
+        <p>Developed a zero-lag search engine that scans across titles, URLs, descriptions, and tags simultaneously, featuring a premium "frosted glass" loading overlay during category transitions.</p>
+      </div>
+      <div class="learning-category">
+        <span class="learning-header"><i class="bi bi-palette"></i> Deep Glassmorphism UX</span>
+        <p>Designed a sleek, "hacker-chic" dark mode UI perfectly optimized for all screens, featuring ambient glowing orbs, semi-transparent frosted glass panels, and ultra-thin neon borders to create an enterprise-grade command center feel.</p>
+      </div>
+      <div class="learning-category">
+        <span class="learning-header"><i class="bi bi-cursor"></i> Advanced Micro-Interactions</span>
+        <p>Utilized Framer Motion to drive buttery-smooth page transitions, staggered grid loading, and interactive hover effects (scaling, border color shifts, gradient text reveals) across every component.</p>
+      </div>
+    `,
+    requiresContact: false
+  },
   { 
     name: "UIU Health Care", key: "uiu-health-care", live: "https://uiu-healthcare.infinityfreeapp.com/", github: "https://github.com/Sharif2023/UIU-Health-Care", 
     thumbnail: "assets/project_thumbnail/uiu_health_care.jpg", featured: false, language: "PHP", category: "Full-Stack",
