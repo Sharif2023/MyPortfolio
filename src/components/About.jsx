@@ -41,24 +41,24 @@ export default function About() {
 
         <div className="row mt-5" data-aos="fade-up">
           <div className="col-12 content">
-            <p className="py-3">Currently pursuing three research projects in green computing, real-time anxiety detection, and generative AI interactions. I am driven by a vision to contribute to technology that is not only functional but meaningful.</p>
-
             <div className="about-story-block">
-              <h4 className="about-story-title"><i className="bi bi-heart-fill" /> My Journey</h4>
-              <p>I fell in love with coding the day I realised a few lines of logic could become something thousands of people actually use. Growing up in Dhaka, I was always curious about <em>how things work</em> — and web development gave me the answer in the most tangible way possible. Every project I build starts with a real human problem: how do we make daily life simpler, faster, or more connected?</p>
-              <p>What inspires me most is the open-source community — the idea that knowledge should be free and that collaboration multiplies impact. I enjoy solving complex UX challenges: turning cluttered user flows into delightful, intuitive experiences. Whether it's a recipe app that feels like a friend's recommendation or a healthcare portal that saves someone a trip to a clinic — I build things that <strong>matter</strong>.</p>
+              <h4 className="about-story-title"><i className="bi bi-map-fill" /> My Journey</h4>
+              <p>My journey into technology began not with memorization, but with a deep-rooted passion for critical thinking. I naturally gravitated toward analytical subjects like Mathematics, Physics, and Chemistry. However, it was during my intermediate studies that I discovered Information and Communication Technology (ICT). Learning about number systems, HTML, and databases sparked a profound curiosity: <em>How does real-world software actually work behind the scenes?</em></p>
+              <p>Despite not having a personal computer at the time to practice coding, my fascination only grew. I explored various tech disciplines and eventually chose to pursue a degree in <strong>Computer Science & Engineering (CSE)</strong> over a singular focus on software engineering. CSE offered a comprehensive foundation across multiple domains—from AI and cybersecurity to DevOps and project management—giving me the freedom to discover which path truly suited me best.</p>
+              <p>Today, my focus is on mastering software development from scratch. I deeply analyze industry workflows, architectural gaps, and business logic to evolve into a complete, highly adaptable software engineer. I continuously build new projects to keep pace with rapid industry shifts, embracing the challenge of learning new frameworks on demand. Ultimately, my vision is to architect and deploy my own large-scale digital platforms—similar to Udemy or Daraz—creating impactful products that solve real-world problems and generate sustainable passive income.</p>
             </div>
 
             <div className="about-softskills-block mt-4">
               <h4 className="about-story-title"><i className="bi bi-people-fill" /> Teamwork &amp; Soft Skills</h4>
-              <p>I'm currently collaborating in a <strong>3-member research team</strong> on three academic papers spanning green computing, AI-driven developer wellness, and GenAI interaction design — coordinating research, literature reviews, and prototype development together.</p>
-              <div className="softskill-tags">
-                <span><i className="bi bi-people" /> Team Collaboration</span>
-                <span><i className="bi bi-journal-code" /> Academic Research</span>
-                <span><i className="bi bi-lightbulb" /> Problem Solving</span>
-                <span><i className="bi bi-chat-dots" /> Communication</span>
-                <span><i className="bi bi-arrow-repeat" /> Adaptability</span>
-                <span><i className="bi bi-stars" /> Creative Thinking</span>
+              <p>Throughout my academic and professional career, I have developed a highly adaptive approach to teamwork. When collaborating with cross-functional or less technically experienced teams, I naturally step into a leadership role—strategically delegating tasks like data collection, surveys, and documentation while I architect and deploy the critical codebase from scratch. This was instrumental in driving the end-to-end development of three research papers currently submitted to ICCB.</p>
+              <p>I thrive under immense pressure. Working through sleepless nights and tight deadlines has been one of my greatest catalysts for rapid skill growth. Conversely, when collaborating with highly skilled engineers—whether debugging over a Google Meet or brainstorming architectures informally over tea at a local canteen or bridge—I am a sponge for new knowledge. I adapt to new environments almost instantly, always seeking the most optimized path to 100% project completion under my core philosophy: <em>"Less Effort, More Outcome."</em> Ultimately, I am driven by an uncompromising sense of accountability; I take my commitments seriously and refuse to settle for known mistakes.</p>
+              <div className="softskill-tags mt-3">
+                <span><i className="bi bi-diagram-3" /> Technical Leadership</span>
+                <span><i className="bi bi-lightning-charge" /> High-Pressure Execution</span>
+                <span><i className="bi bi-arrow-repeat" /> Rapid Adaptability</span>
+                <span><i className="bi bi-check2-circle" /> Accountability</span>
+                <span><i className="bi bi-chat-quote" /> Informal Collaboration</span>
+                <span><i className="bi bi-gear-wide-connected" /> Strategic Delegation</span>
               </div>
             </div>
 

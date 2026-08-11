@@ -5,7 +5,6 @@ export default function Skills() {
     <section id="skills" className="skills section light-background">
       <div className="container section-title" data-aos="fade-up">
         <h2>Skills</h2>
-        <p>Technologies I work with — across frontend, backend, databases, and DevOps tools.</p>
       </div>
       <div className="container">
         {Object.values(SKILLS).map(({ icon, label, items }, gi) => (
