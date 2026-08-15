@@ -23,7 +23,10 @@ export default function Hero() {
 
   return (
     <section id="hero" className="hero section dark-background">
-      <video src="/assets/img/me.mp4" autoPlay loop muted playsInline className="hero-img" data-aos="fade-in" style={{ objectFit: 'cover' }} />
+      <picture data-aos="fade-in">
+        <source media="(max-width: 768px)" srcSet="/assets/img/me_mobile.jpg" />
+        <img src="/assets/img/me.jpg" alt="Shariful Islam - Engineer Sharif Portfolio" className="hero-img" fetchPriority="high" decoding="async" />
+      </picture>
 
       <div className="container" data-aos="fade-up" data-aos-delay="100">
         <h2>Shariful Islam</h2>
