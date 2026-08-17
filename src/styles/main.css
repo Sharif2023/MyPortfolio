@@ -996,6 +996,45 @@ section,
   margin-bottom: 8px;
 }
 
+/* Education GPA Row with inline Certificate Button */
+.edu-gpa-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.edu-cert-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.edu-cert-btn {
+  background: rgba(220, 38, 38, 0.12);
+  color: #f87171;
+  border: 1px solid rgba(220, 38, 38, 0.3);
+}
+
+.edu-cert-btn:hover {
+  background: rgba(220, 38, 38, 0.25);
+  color: #fca5a5;
+  border-color: rgba(220, 38, 38, 0.6);
+  transform: translateY(-1px);
+}
+
+
+
+
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/

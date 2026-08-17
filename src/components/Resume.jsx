@@ -35,9 +35,28 @@ export default function Resume() {
             <h3 className="resume-title mb-4"><i className="bi bi-mortarboard-fill me-2" /> Education</h3>
             <div className="timeline">
               {[
-                { title: 'B.Sc. in Computer Science & Engineering', period: '2021 – 2025', institution: 'United International University (UIU), Dhaka', detail: 'Focused on software development, web technologies, database systems, and UI/UX design.', gpa: 'GPA: 3.31 / 4.00' },
-                { title: 'Higher Secondary Certificate (HSC) – Science', period: '2018 – 2020', institution: 'Kabi Nazrul Govt. College, Dhaka', gpa: 'GPA 4.75 / 5.00' },
-                { title: 'Secondary School Certificate (SSC) – Science', period: '2016 – 2018', institution: 'KPB School & College, Dhaka', gpa: 'GPA 5.00 / 5.00' },
+                {
+                  title: 'B.Sc. in Computer Science & Engineering',
+                  period: '2021 – 2025',
+                  institution: 'United International University (UIU), Dhaka',
+                  detail: 'Focused on software development, web technologies, database systems, and UI/UX design.',
+                  gpa: 'GPA: 3.31 / 4.00',
+                  certificate: '/assets/Academic_Certificate/UIU_Certificate.pdf',
+                },
+                {
+                  title: 'Higher Secondary Certificate (HSC) – Science',
+                  period: '2018 – 2020',
+                  institution: 'Kabi Nazrul Govt. College, Dhaka',
+                  gpa: 'GPA 4.75 / 5.00',
+                  certificate: '/assets/Academic_Certificate/HSC_Certificate.pdf',
+                },
+                {
+                  title: 'Secondary School Certificate (SSC) – Science',
+                  period: '2016 – 2018',
+                  institution: 'KPB School & College, Dhaka',
+                  gpa: 'GPA 5.00 / 5.00',
+                  certificate: '/assets/Academic_Certificate/SSC_Certificate.pdf',
+                },
               ].map(e => (
                 <div className="timeline-item" key={e.title}>
                   <div className="timeline-marker" />
@@ -46,7 +65,12 @@ export default function Resume() {
                     <h5><i className="bi bi-calendar3 me-1" />{e.period}</h5>
                     <p><em><i className="bi bi-building me-1" />{e.institution}</em></p>
                     {e.detail && <p>{e.detail}</p>}
-                    <p><strong>{e.gpa}</strong></p>
+                    <div className="edu-gpa-row">
+                      <strong>{e.gpa}</strong>
+                      <a href={e.certificate} target="_blank" rel="noopener noreferrer" className="edu-cert-btn">
+                        <i className="bi bi-file-earmark-pdf-fill" /> View Certificate
+                      </a>
+                    </div>
                   </div>
                 </div>
               ))}
