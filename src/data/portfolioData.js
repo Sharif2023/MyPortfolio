@@ -1,35 +1,5 @@
 export const PROJECTS = [
   { 
-    name: "Amar Recipe", key: "amar_recipe", live: "https://amar-recipe.vercel.app/", github: "https://github.com/Sharif2023/Amar_Recipe", 
-    thumbnail: "assets/project_thumbnail/amar_recipe.jpg", featured: true, language: "JavaScript", category: "Full-Stack",
-    problem: "Finding authentic Bangladeshi recipes online is scattered and unreliable — there's no dedicated, clean platform for Food Lovers.", 
-    stack: ["React", "Vite", "Tailwind CSS", "PHP", "PostgreSQL (Supabase)", "Vercel", "Render", "Docker", "Resend API"], 
-    impact: "A live recipe-sharing platform used by friends and family across Bangladesh, featuring a fully Bengali-localized user experience. The platform enables community interaction through recipe submissions, request posts, 5-star ratings, and reporting tools, while an administrative moderation system ensures content quality and safe community participation.", 
-    learning: `
-      <div class="learning-category">
-        <span class="learning-header"><i class="bi bi-window-sidebar"></i> Modern Frontend Development</span>
-        <p>Built responsive, mobile-first interfaces using React and Tailwind CSS with a focus on reusable components, clean UI architecture, and smooth user interactions.</p>
-      </div>
-      <div class="learning-category">
-        <span class="learning-header"><i class="bi bi-database-lock"></i> Backend Engineering</span>
-        <p>Implemented secure PHP backend services including authentication with bcrypt, media upload handling, content moderation workflows, and API endpoints for real-time user interactions.</p>
-      </div>
-      <div class="learning-category">
-        <span class="learning-header"><i class="bi bi-cloud-check"></i> Deployment & Cloud Management</span>
-        <p>Deployed the full-stack application using <strong>Vercel (frontend), Render with Docker (backend services),</strong> and <strong>Supabase PostgreSQL (database)</strong>. Managed environment variables, production secrets, CORS configuration, and integrated transactional email delivery using the Resend API.</p>
-      </div>
-      <div class="learning-category">
-        <span class="learning-header"><i class="bi bi-diagram-3"></i> Database & System Design</span>
-        <p>Designed PostgreSQL schemas supporting recipe management, user roles, moderation logs, ratings, and reporting workflows to maintain data integrity and traceability.</p>
-      </div>
-      <div class="learning-category">
-        <span class="learning-header"><i class="bi bi-shield-lock"></i> Admin & Community Tools</span>
-        <p>Built a multi-role admin dashboard enabling administrators to view, edit, and remove recipes, verify user recipe submissions, and manage content reports through role-based moderation. Implemented a root admin layer to control admin roles, approve new admin requests, and manage platform staff. The system also includes chat, notifications, moderation history, privacy settings, and profile management to support efficient community governance.</p>
-      </div>
-    `, 
-    requiresContact: true 
-  },
-  { 
     name: "StudyNest", key: "studynest", live: "https://studynest-edu.vercel.app/", github: "https://github.com/Sharif2023/StudyNest", 
     thumbnail: "assets/project_thumbnail/studynest.jpg", featured: true, language: "JavaScript", category: "Full-Stack",
     problem: "University students often face academic isolation and fragmented study habits. StudyNest unifies the student journey by providing a centralized digital campus for live interactive sessions, AI-aided document analysis, and peer-validated resources.", 
@@ -60,6 +30,62 @@ export const PROJECTS = [
       </div>
     `
   },
+  {
+    name: "Linkora", key: "linkora", live: "https://linkora-hub.vercel.app/", github: "https://github.com/Sharif2023/Linkora",
+    thumbnail: "assets/project_thumbnail/linkora.mp4", featured: true, language: "TypeScript", category: "Full-Stack",
+    problem: "Many sites offer endless lists of AI tools and websites, but users still don't know *how* to combine them to achieve a goal. Bookmarking raw links doesn't provide a roadmap for execution, leaving creators paralyzed when trying to start a YouTube channel, launch a SaaS, or build a newsletter.",
+    stack: ["Next.js 16 (App Router)", "React 19", "TypeScript", "Tailwind CSS v4", "Three.js", "React Three Fiber", "PostgreSQL", "Prisma ORM 7", "NextAuth.js", "Zod"],
+    impact: "Linkora goes beyond simply listing tools by offering interactive 'Implement Plans'. These are guided, step-by-step blueprints that merge groups of sites into actionable roadmaps. For example, to build a YouTube career, it guides you through an exact sequence: which AI tool for thumbnails, which software for video editing, and which platform for SEO, complete with progress tracking.",
+    learning: `
+      <div class="learning-category">
+        <span class="learning-header"><i class="bi bi-window-sidebar"></i> Full-Stack Next.js Architecture</span>
+        <p>Decoupled Three.js in modern server-driven frameworks to eliminate hydration errors when rendering 3D canvases inside React 19 server components. Managed dynamic nested routing and cache management in Next.js App Router.</p>
+      </div>
+      <div class="learning-category">
+        <span class="learning-header"><i class="bi bi-database-lock"></i> Database & ORM Engineering</span>
+        <p>Migrated to Prisma 7 architecture using native PostgreSQL driver adapters (@prisma/adapter-pg). Configured connection lifecycle management and designed relational schemas modeling multi-phase roadmaps, task-level progress tracking, and curated collections.</p>
+      </div>
+      <div class="learning-category">
+        <span class="learning-header"><i class="bi bi-shield-check"></i> Security & Validation</span>
+        <p>Implemented secure authentication with NextAuth.js, credential hashing with bcryptjs, and strict API runtime schema validation using Zod for type-safe API requests.</p>
+      </div>
+      <div class="learning-category">
+        <span class="learning-header"><i class="bi bi-palette"></i> 3D UX & Visual Proportions</span>
+        <p>Engineered dynamic 3D particle hero animations using Three.js and React Three Fiber. Built instant client-side search, category filtering, and interactive task completion toggles backed by optimistic UI state transitions and RESTful API endpoints.</p>
+      </div>
+    `,
+    requiresContact: false
+  },
+  { 
+    name: "Amar Recipe", key: "amar_recipe", live: "https://amar-recipe.vercel.app/", github: "https://github.com/Sharif2023/Amar_Recipe", 
+    thumbnail: "assets/project_thumbnail/amar_recipe.jpg", featured: true, language: "JavaScript", category: "Full-Stack",
+    problem: "Finding authentic Bangladeshi recipes online is scattered and unreliable — there's no dedicated, clean platform for Food Lovers.", 
+    stack: ["React", "Vite", "Tailwind CSS", "PHP", "PostgreSQL (Supabase)", "Vercel", "Render", "Docker", "Resend API"], 
+    impact: "A live recipe-sharing platform used by friends and family across Bangladesh, featuring a fully Bengali-localized user experience. The platform enables community interaction through recipe submissions, request posts, 5-star ratings, and reporting tools, while an administrative moderation system ensures content quality and safe community participation.", 
+    learning: `
+      <div class="learning-category">
+        <span class="learning-header"><i class="bi bi-window-sidebar"></i> Modern Frontend Development</span>
+        <p>Built responsive, mobile-first interfaces using React and Tailwind CSS with a focus on reusable components, clean UI architecture, and smooth user interactions.</p>
+      </div>
+      <div class="learning-category">
+        <span class="learning-header"><i class="bi bi-database-lock"></i> Backend Engineering</span>
+        <p>Implemented secure PHP backend services including authentication with bcrypt, media upload handling, content moderation workflows, and API endpoints for real-time user interactions.</p>
+      </div>
+      <div class="learning-category">
+        <span class="learning-header"><i class="bi bi-cloud-check"></i> Deployment & Cloud Management</span>
+        <p>Deployed the full-stack application using <strong>Vercel (frontend), Render with Docker (backend services),</strong> and <strong>Supabase PostgreSQL (database)</strong>. Managed environment variables, production secrets, CORS configuration, and integrated transactional email delivery using the Resend API.</p>
+      </div>
+      <div class="learning-category">
+        <span class="learning-header"><i class="bi bi-diagram-3"></i> Database & System Design</span>
+        <p>Designed PostgreSQL schemas supporting recipe management, user roles, moderation logs, ratings, and reporting workflows to maintain data integrity and traceability.</p>
+      </div>
+      <div class="learning-category">
+        <span class="learning-header"><i class="bi bi-shield-lock"></i> Admin & Community Tools</span>
+        <p>Built a multi-role admin dashboard enabling administrators to view, edit, and remove recipes, verify user recipe submissions, and manage content reports through role-based moderation. Implemented a root admin layer to control admin roles, approve new admin requests, and manage platform staff. The system also includes chat, notifications, moderation history, privacy settings, and profile management to support efficient community governance.</p>
+      </div>
+    `, 
+    requiresContact: true 
+  },
   { 
     name: "CamSociety Laraval", key: "camsociety_laraval", live: "https://camsociety-backend.onrender.com/", github: "https://github.com/Sharif2023/CamSociety_Laraval", 
     thumbnail: "assets/project_thumbnail/camsociety.jpg", featured: false, language: "PHP", category: "Frontend",
@@ -80,32 +106,6 @@ export const PROJECTS = [
         <p>Practical experience in configuring Dockerized environments for consistent development and seamless cloud deployment on Render, along with SMTP configuration for robust communication.</p>
       </div>
     `
-  },
-  {
-    name: "Linkora", key: "linkora", live: "https://linkora-hub.vercel.app/", github: "https://github.com/Sharif2023/Linkora",
-    thumbnail: "assets/project_thumbnail/linkora.mp4", featured: true, language: "TypeScript", category: "Frontend",
-    problem: "Developers and AI researchers lack a centralized, visually organized workspace to manage essential web links, platforms, and UI frameworks effectively.",
-    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "lucide-react"],
-    impact: "A high-performance 'Intelligence Workspace' and curated resource directory. It serves as a centralized hub for organizing and discovering over 150+ essential developer utilities with blazing fast SEO optimization.",
-    learning: `
-      <div class="learning-category">
-        <span class="learning-header"><i class="bi bi-diagram-3"></i> Dynamic Data Architecture</span>
-        <p>Engineered a dynamic platform powered by a single source of truth. The landing page statistics, dashboard metrics, and sidebar categories dynamically calculate and update themselves based on the raw dataset.</p>
-      </div>
-      <div class="learning-category">
-        <span class="learning-header"><i class="bi bi-search"></i> Lightning-Fast Search Engine</span>
-        <p>Developed a zero-lag search engine that scans across titles, URLs, descriptions, and tags simultaneously, featuring a premium "frosted glass" loading overlay during category transitions.</p>
-      </div>
-      <div class="learning-category">
-        <span class="learning-header"><i class="bi bi-palette"></i> Deep Glassmorphism UX</span>
-        <p>Designed a sleek, "hacker-chic" dark mode UI perfectly optimized for all screens, featuring ambient glowing orbs, semi-transparent frosted glass panels, and ultra-thin neon borders to create an enterprise-grade command center feel.</p>
-      </div>
-      <div class="learning-category">
-        <span class="learning-header"><i class="bi bi-cursor"></i> Advanced Micro-Interactions</span>
-        <p>Utilized Framer Motion to drive buttery-smooth page transitions, staggered grid loading, and interactive hover effects (scaling, border color shifts, gradient text reveals) across every component.</p>
-      </div>
-    `,
-    requiresContact: false
   },
   { 
     name: "UIU Health Care", key: "uiu-health-care", live: "https://uiu-healthcare.infinityfreeapp.com/", github: "https://github.com/Sharif2023/UIU-Health-Care", 
@@ -214,7 +214,7 @@ export const PROJECTS = [
       </div>
     `,
     requiresContact: false 
-  },
+  }
 ];
 
 export const CERTIFICATIONS = [
