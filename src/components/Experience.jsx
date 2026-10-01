@@ -13,8 +13,8 @@ export default function Experience() {
                 <div className="timeline-marker" />
                 <div className="timeline-content">
                   <h4>Front End Developer</h4>
-                  <h5><i className="bi bi-calendar3 me-1" />March 2026 &ndash; Now</h5>
-                  <p><em><i className="bi bi-building me-1" /><a href="https://www.fakibajgobeshok.org/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-color)' }}>Fakibaj Gobeshok</a> &nbsp;·&nbsp; MangoSeed — E-Learning Platform &nbsp;·&nbsp; Remote, Part-time</em></p>
+                  <h5><i className="bi bi-calendar3 me-1" />March 2026 &ndash; September 2026</h5>
+                  <p><em><i className="bi bi-building me-1" /><a href="https://www.fakibajgobeshok.org/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-color)' }}>Fakibaj Gobeshok</a> &nbsp;·&nbsp; Remote, Part-time</em></p>
                   <ul className="mt-3" style={{ listStyleType: 'disc', paddingLeft: '20px', textAlign: 'justify', fontSize: '0.95rem', color: 'var(--color-default)' }}>
                     <li className="mb-2">Architected a scalable <strong>React</strong> and <strong>Tailwind CSS</strong> frontend from scratch comprising <strong>75+ modular components and pages</strong>, following <strong>DRY principles</strong> for high reusability across student and instructor interfaces.</li>
                     <li className="mb-2">Integrated <strong>85+ REST API endpoints</strong> via Swagger using centralized Axios service modules with <strong>JWT</strong> interceptors, driving features including video streaming, interactive Q&amp;A, secure checkouts, and real-time instructor analytics.</li>
