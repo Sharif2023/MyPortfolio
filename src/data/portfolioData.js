@@ -59,9 +59,9 @@ export const PROJECTS = [
   { 
     name: "Amar Recipe", key: "amar_recipe", live: "https://amar-recipe.vercel.app/", github: "https://github.com/Sharif2023/Amar_Recipe", 
     thumbnail: "assets/project_thumbnail/amar_recipe.jpg", featured: true, language: "JavaScript", category: "Full-Stack",
-    problem: "Finding authentic Bangladeshi recipes online is scattered and unreliable — there's no dedicated, clean platform for Food Lovers.", 
+    problem: "Finding authentic Bangladeshi recipes online is often scattered and unreliable, with many platforms introducing unnecessary friction for casual contributors.", 
     stack: ["React", "Vite", "Tailwind CSS", "PHP", "PostgreSQL (Supabase)", "Vercel", "Render", "Docker", "Resend API"], 
-    impact: "A live recipe-sharing platform used by friends and family across Bangladesh, featuring a fully Bengali-localized user experience. The platform enables community interaction through recipe submissions, request posts, 5-star ratings, and reporting tools, while an administrative moderation system ensures content quality and safe community participation.", 
+    impact: "A live recipe-sharing platform used by friends and family across Bangladesh, featuring a fully Bengali-localized user experience. The platform enables community interaction—allowing users to seamlessly contribute recipes, request posts, and leave 5-star ratings without requiring any user login. To balance this open contribution model, an extensive administrative moderation panel ensures content quality and safe community participation.", 
     learning: `
       <div class="learning-category">
         <span class="learning-header"><i class="bi bi-window-sidebar"></i> Modern Frontend Development</span>
