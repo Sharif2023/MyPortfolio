@@ -231,67 +231,73 @@ export const CERTIFICATIONS = [
 
 export const SKILLS = {
   frontend: { icon: "bi-code-slash", label: "Frontend Development", items: [
+    { name: "React.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" }, 
+    { name: "Next.js", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/nextdotjs.svg", invert: true },
+    { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" }, 
+    { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" }, 
+    { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" }, 
     { name: "HTML5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" }, 
     { name: "CSS3", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" }, 
-    { name: "JavaScript (ES6+)", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" }, 
-    { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" }, 
-    { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" }, 
+    { name: "Bootstrap", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" }, 
     { name: "Angular", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" }, 
     { name: "Vue.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" }, 
     { name: "Svelte", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg" },
-    { name: "Next.js", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/nextdotjs.svg", invert: true }
-  ] },
-  ui: { icon: "bi-palette", label: "UI & Animation", items: [
-    { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" }, 
-    { name: "Bootstrap", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" }, 
-    { name: "Figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" }, 
     { name: "Framer Motion", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/framer.svg", invert: true }, 
     { name: "Three.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/threejs/threejs-original.svg", invert: true }
   ] },
-  backend: { icon: "bi-hdd-network", label: "Backend & Full-Stack", items: [
-    { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" }, 
+  backend: { icon: "bi-hdd-network", label: "Backend Development", items: [
     { name: "PHP", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" }, 
+    { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" }, 
+    { name: "Express.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg", invert: true }, 
     { name: "Laravel", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" }, 
     { name: "Inertia.js", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/inertia.svg", invert: true },
-    { name: "JWT", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/jsonwebtokens.svg", invert: true },
-    { name: "Axios Interception", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/axios.svg", invert: true },
-    { name: "REST API", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/openapiinitiative.svg", invert: true },
-    { name: "Express.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg", invert: true }, 
     { name: "Socket.io", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg", invert: true } 
   ] },
-  database: { icon: "bi-database", label: "Database & Services", items: [
-    { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" }, 
+  database: { icon: "bi-database", label: "Database", items: [
     { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" }, 
-    { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" }, 
+    { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" }, 
     { name: "Supabase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg" }, 
+    { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" }, 
     { name: "Resend API", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/resend.svg", invert: true }
   ] },
-  payment: { icon: "bi-credit-card", label: "Payment Gateways", items: [
-    { name: "Stripe", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/stripe.svg", invert: true },
-    { name: "SSLCommerz", icon: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/credit-card.svg", invert: true },
-    { name: "AmarPay", icon: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/wallet.svg", invert: true },
-    { name: "UddoktaPay", icon: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/cash-coin.svg", invert: true }
+  automation: { icon: "bi-robot", label: "Automation & Testing", items: [
+    { name: "Playwright", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/playwright.svg", invert: true },
+    { name: "Selenium", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" },
+    { name: "Postman", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" }
   ] },
-  tools: { icon: "bi-tools", label: "Tools & DevOps", items: [
+  tools: { icon: "bi-tools", label: "Tools", items: [
     { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" }, 
     { name: "GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg", invert: true },
+    { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" }, 
+    { name: "Figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" }, 
+    { name: "Prisma ORM", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/prisma.svg", invert: true },
     { name: "npm", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" },
     { name: "Composer", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/composer/composer-original.svg" }, 
     { name: "Vite", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg" }, 
-    { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" }, 
     { name: "Vercel", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/vercel.svg", invert: true }, 
     { name: "Render", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/render.svg", invert: true }, 
     { name: "AWS", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/amazonaws.svg", invert: true },
     { name: "Linux", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" },
     { name: "Cloudflare", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/cloudflare.svg", invert: true },
     { name: "n8n", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/n8n.svg", invert: true },
-    { name: "Postman", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" },
-    { name: "Swagger", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swagger/swagger-original.svg" },
     { name: "Nginx", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" },
     { name: "Apache", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg" },
     { name: "DigitalOcean", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/digitalocean/digitalocean-original.svg" },
     { name: "Jira", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" }
   ] },
+  concepts: { icon: "bi-lightbulb", label: "Concepts", items: [
+    { name: "REST APIs", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/openapiinitiative.svg", invert: true },
+    { name: "JWT Authentication", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/jsonwebtokens.svg", invert: true },
+    { name: "RBAC", icon: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/shield-lock.svg", invert: true },
+    { name: "Swagger/OpenAPI", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swagger/swagger-original.svg" },
+    { name: "Axios Interception", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/axios.svg", invert: true }
+  ] },
+  payment: { icon: "bi-credit-card", label: "Payment Gateways", items: [
+    { name: "Stripe", icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/stripe.svg", invert: true },
+    { name: "SSLCommerz", icon: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/credit-card.svg", invert: true },
+    { name: "AmarPay", icon: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/wallet.svg", invert: true },
+    { name: "UddoktaPay", icon: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/cash-coin.svg", invert: true }
+  ] }
 };
 
 export const ABOUT_DATA = {
