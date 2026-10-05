@@ -3411,3 +3411,55 @@ a.contact-info-value:hover {
   z-index: 1;
 }
 
+/* Projects Filtering Tabs */
+.category-tab {
+  background: transparent;
+  border: none;
+  padding: 10px 15px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--default-color);
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+}
+
+.category-tab.active {
+  color: var(--accent-color);
+  opacity: 1;
+}
+
+.category-tab:hover {
+  opacity: 1;
+  color: var(--accent-color);
+}
+
+.category-tab::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--accent-color);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: center;
+}
+
+.category-tab.active::after {
+  transform: scaleX(1);
+}
+
+/* Projects Keyframes */
+@keyframes projectPopIn {
+  0% { opacity: 0; transform: scale(0.95) translateY(20px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.project-animated {
+  animation: projectPopIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+  will-change: transform, opacity;
+}

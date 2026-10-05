@@ -22,7 +22,7 @@ export default function ScrollTop() {
       onClick={scrollUp}
       aria-label="Scroll to top"
     >
-      <i className="bi bi-arrow-up-short" />
+      <i aria-hidden="true" className="bi bi-arrow-up-short" />
     </a>
   );
 }

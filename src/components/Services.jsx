@@ -19,7 +19,7 @@ export default function Services() {
           {services.map((s, i) => (
             <div className="col-lg-4 col-md-6" key={s.title} data-aos="fade-up" data-aos-delay={100 + i * 100}>
               <div className="service-card">
-                <div className="service-card-icon"><i className={`bi ${s.icon}`} /></div>
+                <div className="service-card-icon"><i aria-hidden="true" className={`bi ${s.icon}`} /></div>
                 <h4 className="service-card-title">{s.title}</h4>
                 <p className="service-card-desc">{s.desc}</p>
                 <div className="service-card-tags">{s.tags.map(t => <span key={t}>{t}</span>)}</div>

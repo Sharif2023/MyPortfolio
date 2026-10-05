@@ -28,7 +28,7 @@ export default function Certifications() {
                   <div className="cert-issuer-logo">
                     <img src={cert.logo} alt={cert.issuer} loading="lazy" decoding="async"
                       onError={e => { e.target.style.display = 'none'; e.target.nextElementSibling.style.display = 'flex'; }} />
-                    <div className="cert-issuer-fallback" style={{ display: 'none' }}><i className="bi bi-award-fill" /></div>
+                    <div className="cert-issuer-fallback" style={{ display: 'none' }}><i aria-hidden="true" className="bi bi-award-fill" /></div>
                   </div>
                   <span className="cert-date">{cert.year}</span>
                 </div>
@@ -41,12 +41,12 @@ export default function Certifications() {
                 <div className="cert-card-footer">
                   {cert.verifyUrl && (
                     <a href={cert.verifyUrl} target="_blank" rel="noopener noreferrer" className="cert-verify-btn">
-                      <i className="bi bi-patch-check-fill" /> Verify Certificate
+                      <i aria-hidden="true" className="bi bi-patch-check-fill" /> Verify Certificate
                     </a>
                   )}
                   <a href={cert.viewUrl} target="_blank" rel="noopener noreferrer"
                     className={cert.verifyUrl ? 'cert-view-btn' : 'cert-view-btn cert-view-btn--full'}>
-                    <i className="bi bi-eye" /> View
+                    <i aria-hidden="true" className="bi bi-eye" /> View
                   </a>
                 </div>
               </div>

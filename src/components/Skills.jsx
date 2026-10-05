@@ -10,7 +10,7 @@ export default function Skills() {
         {Object.values(SKILLS).map(({ icon, label, items }, gi) => (
           <div className="skill-group" key={label} data-aos="fade-up" data-aos-delay={100 + gi * 50}>
             <div className="skill-group-header">
-              <i className={`bi ${icon}`} /><span>{label}</span>
+              <i aria-hidden="true" className={`bi ${icon}`} /><span>{label}</span>
             </div>
             <div className="skill-pills">
               {items.map(({ name, icon: src, invert }) => (

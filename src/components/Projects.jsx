@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { PROJECTS } from '../data/portfolioData';
+import VanillaTilt from 'vanilla-tilt';
 
 
 
@@ -21,7 +22,7 @@ export default function Projects({ onOpenModal }) {
         const cards = tiltRef.current.querySelectorAll('.proj-card');
         cards.forEach(card => card.vanillaTilt && card.vanillaTilt.destroy());
         
-        window.VanillaTilt.init(cards, {
+        VanillaTilt.init(cards, {
           max: 8, speed: 400, glare: true, 'max-glare': 0.15,
         });
       }
@@ -46,60 +47,12 @@ export default function Projects({ onOpenModal }) {
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 className={`category-tab ${activeCategory === cat ? 'active' : ''}`}
-                style={{
-                  background: 'transparent',
-                  border: 'none',
-                  padding: '10px 15px',
-                  fontWeight: '600',
-                  fontSize: '1.05rem',
-                  color: activeCategory === cat ? 'var(--accent-color)' : 'var(--default-color)',
-                  position: 'relative',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s ease',
-                  opacity: activeCategory === cat ? 1 : 0.7,
-                }}
-                onMouseEnter={(e) => {
-                  if (activeCategory !== cat) {
-                    e.target.style.opacity = 1;
-                    e.target.style.color = 'var(--accent-color)';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (activeCategory !== cat) {
-                    e.target.style.opacity = 0.7;
-                    e.target.style.color = 'var(--default-color)';
-                  }
-                }}
               >
                 {cat}
-                {/* Underline Bar */}
-                <div style={{
-                  position: 'absolute',
-                  bottom: '-12px',
-                  left: 0,
-                  width: '100%',
-                  height: '3px',
-                  backgroundColor: 'var(--accent-color)',
-                  transform: activeCategory === cat ? 'scaleX(1)' : 'scaleX(0)',
-                  transition: 'transform 0.3s ease',
-                  transformOrigin: 'center'
-                }} />
               </button>
             ))}
           </div>
         </div>
-
-        <style>{`
-          @keyframes projectPopIn {
-            0% { opacity: 0; transform: scale(0.95) translateY(20px); }
-            100% { opacity: 1; transform: scale(1) translateY(0); }
-          }
-          .project-animated {
-            animation: projectPopIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            opacity: 0;
-            will-change: transform, opacity;
-          }
-        `}</style>
 
         {/* The key prop forces React to completely recreate this grid when the category changes, re-triggering the entrance animations */}
         <div id="github-projects" className="projects-grid" ref={tiltRef} key={activeCategory}>
@@ -120,10 +73,10 @@ export default function Projects({ onOpenModal }) {
                     <div className="proj-thumb-overlay" />
                     {p.live && (
                       <a href={p.live} target="_blank" rel="noopener noreferrer" className="badge-live-demo">
-                        <i className="bi bi-broadcast-pin" /> Live
+                        <i aria-hidden="true" className="bi bi-broadcast-pin" /> Live
                       </a>
                     )}
-                    {p.featured && <span className="proj-featured-chip"><i className="bi bi-star-fill" /> Featured</span>}
+                    {p.featured && <span className="proj-featured-chip"><i aria-hidden="true" className="bi bi-star-fill" /> Featured</span>}
                   </div>
                   <div className="proj-body">
                     <h4 className="proj-title">{p.name}</h4>
@@ -131,14 +84,14 @@ export default function Projects({ onOpenModal }) {
 
                     <div className="proj-actions">
                       <button className="proj-btn proj-btn-detail" onClick={() => onOpenModal(p)}>
-                        <i className="bi bi-info-circle" /> Details
+                        <i aria-hidden="true" className="bi bi-info-circle" /> Details
                       </button>
                       <a href={p.github} target="_blank" rel="noopener noreferrer" className="proj-btn proj-btn-repo">
-                        <i className="bi bi-github" /> Repo
+                        <i aria-hidden="true" className="bi bi-github" /> Repo
                       </a>
                       {p.live && (
                         <a href={p.live} target="_blank" rel="noopener noreferrer" className="proj-btn proj-btn-live">
-                          <i className="bi bi-play-fill" /> Live Demo
+                          <i aria-hidden="true" className="bi bi-play-fill" /> Live Demo
                         </a>
                       )}
                     </div>
@@ -148,7 +101,7 @@ export default function Projects({ onOpenModal }) {
             ))
           ) : (
             <div className="projects-empty-state project-animated" style={{ gridColumn: '1 / -1', textAlign: 'center', padding: '80px 20px', background: 'rgba(255,255,255,0.03)', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)' }}>
-              <i className="bi bi-laptop" style={{ fontSize: '3.5rem', color: 'var(--accent-color)', opacity: 0.8, marginBottom: '20px', display: 'block' }}></i>
+              <i aria-hidden="true" className="bi bi-laptop" style={{ fontSize: '3.5rem', color: 'var(--accent-color)', opacity: 0.8, marginBottom: '20px', display: 'block' }}></i>
               <h4 style={{ color: 'var(--heading-color)', marginBottom: '15px', fontWeight: '600' }}>Currently Working on it...</h4>
               <p style={{ color: 'var(--default-color)', opacity: 0.8, margin: 0, fontSize: '1.1rem' }}>Exciting new {activeCategory.toLowerCase()} projects are under development. Check back soon!</p>
             </div>

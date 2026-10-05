@@ -21,7 +21,7 @@ export default function ProjectModal({ project, onClose }) {
   return (
     <div className="proj-modal-overlay open" role="dialog" aria-modal="true" onClick={e => { if (e.target === e.currentTarget) onClose(); }}>
       <div className="proj-modal-box" id="proj-modal-box" ref={boxRef}>
-        <button className="proj-modal-close" onClick={onClose} aria-label="Close"><i className="bi bi-x-lg" /></button>
+        <button className="proj-modal-close" onClick={onClose} aria-label="Close"><i aria-hidden="true" className="bi bi-x-lg" /></button>
 
         <div className="proj-modal-img-wrap">
           {project.thumbnail.endsWith('.mp4') ? (
@@ -40,26 +40,26 @@ export default function ProjectModal({ project, onClose }) {
 
           <div id="proj-modal-body">
             <div className="modal-section">
-              <span className="modal-section-label"><i className="bi bi-lightbulb-fill" /> Problem</span>
+              <span className="modal-section-label"><i aria-hidden="true" className="bi bi-lightbulb-fill" /> Problem</span>
               <p>{project.problem}</p>
             </div>
             <div className="modal-section">
-              <span className="modal-section-label"><i className="bi bi-stack" /> Tech Stack</span>
+              <span className="modal-section-label"><i aria-hidden="true" className="bi bi-stack" /> Tech Stack</span>
               <div className="modal-stack-list">{stackPills}</div>
             </div>
             <div className="modal-section">
-              <span className="modal-section-label"><i className="bi bi-globe2" /> Real-World Impact</span>
+              <span className="modal-section-label"><i aria-hidden="true" className="bi bi-globe2" /> Real-World Impact</span>
               <p>{project.impact}</p>
             </div>
             {project.learning && (
               <div className="modal-section">
-                <span className="modal-section-label"><i className="bi bi-mortarboard-fill" /> What I Learned</span>
+                <span className="modal-section-label"><i aria-hidden="true" className="bi bi-mortarboard-fill" /> What I Learned</span>
                 <div className="modal-learning-content" dangerouslySetInnerHTML={{ __html: project.learning }} />
               </div>
             )}
             {project.requiresContact && (
               <div className="modal-section" style={{ borderLeftColor: '#f59e0b' }}>
-                <span className="modal-section-label" style={{ color: '#f59e0b' }}><i className="bi bi-shield-lock-fill" /> Access Control</span>
+                <span className="modal-section-label" style={{ color: '#f59e0b' }}><i aria-hidden="true" className="bi bi-shield-lock-fill" /> Access Control</span>
                 <p style={{ fontSize: '13px', fontStyle: 'italic' }}>
                   For security reasons, test credentials are not displayed publicly.{' '}
                   <a href="#contact" onClick={onClose} style={{ color: 'var(--accent-color)', textDecoration: 'underline' }}>Contact me</a>
@@ -71,11 +71,11 @@ export default function ProjectModal({ project, onClose }) {
 
           <div className="proj-modal-actions">
             <a href={project.github} target="_blank" rel="noopener noreferrer" className="proj-btn proj-btn-repo">
-              <i className="bi bi-github" /> View Repo
+              <i aria-hidden="true" className="bi bi-github" /> View Repo
             </a>
             {project.live && (
               <a href={project.live} target="_blank" rel="noopener noreferrer" className="proj-btn proj-btn-live">
-                <i className="bi bi-play-fill" /> Live Demo
+                <i aria-hidden="true" className="bi bi-play-fill" /> Live Demo
               </a>
             )}
           </div>

@@ -58,7 +58,7 @@ export default function Contact() {
                   { icon: 'bi-envelope-fill', label: 'Email', value: 'sharifislam0505@gmail.com', href: 'mailto:sharifislam0505@gmail.com' },
                 ].map(item => (
                   <div className="contact-info-item" key={item.label}>
-                    <div className="contact-info-icon"><i className={`bi ${item.icon}`} /></div>
+                    <div className="contact-info-icon"><i aria-hidden="true" className={`bi ${item.icon}`} /></div>
                     <div>
                       <span className="contact-info-label">{item.label}</span>
                       {item.href
@@ -76,7 +76,7 @@ export default function Contact() {
                   { href: 'https://www.instagram.com/shariful_islam10', icon: 'bi-instagram', title: 'Instagram' },
                 ].map(s => (
                   <a key={s.title} href={s.href} target="_blank" rel="noopener noreferrer" className="contact-social-btn" title={s.title}>
-                    <i className={`bi ${s.icon}`} />
+                    <i aria-hidden="true" className={`bi ${s.icon}`} />
                   </a>
                 ))}
               </div>
@@ -90,32 +90,32 @@ export default function Contact() {
                 <div className="row gy-4">
                   <div className="col-md-6">
                     <div className="contact-field-wrap">
-                      <label htmlFor="name-field"><i className="bi bi-person me-1" /> Your Name</label>
+                      <label htmlFor="name-field"><i aria-hidden="true" className="bi bi-person me-1" /> Your Name</label>
                       <input type="text" name="name" id="name-field" className="contact-input" placeholder="e.g. John Doe" required />
                     </div>
                   </div>
                   <div className="col-md-6">
                     <div className="contact-field-wrap">
-                      <label htmlFor="email-field"><i className="bi bi-envelope me-1" /> Your Email</label>
+                      <label htmlFor="email-field"><i aria-hidden="true" className="bi bi-envelope me-1" /> Your Email</label>
                       <input type="email" name="email" id="email-field" className="contact-input" placeholder="e.g. john@example.com" required />
                     </div>
                   </div>
                   <div className="col-12">
                     <div className="contact-field-wrap">
-                      <label htmlFor="subject-field"><i className="bi bi-chat-dots me-1" /> Subject</label>
+                      <label htmlFor="subject-field"><i aria-hidden="true" className="bi bi-chat-dots me-1" /> Subject</label>
                       <input type="text" name="subject" id="subject-field" className="contact-input" placeholder="What's this about?" required />
                     </div>
                   </div>
                   <div className="col-12">
                     <div className="contact-field-wrap">
-                      <label htmlFor="message-field"><i className="bi bi-pencil-square me-1" /> Message</label>
+                      <label htmlFor="message-field"><i aria-hidden="true" className="bi bi-pencil-square me-1" /> Message</label>
                       <textarea name="message" id="message-field" className="contact-input contact-textarea" rows="7" placeholder="Share your thoughts or project details..." required />
                     </div>
                   </div>
                   <div className="col-12">
                     {status && <div id="form-messages" className={`${alertClass} mb-3`}>{msg}</div>}
                     <button type="submit" className="contact-submit-btn">
-                      <i className="bi bi-send-fill me-2" /> Send Message
+                      <i aria-hidden="true" className="bi bi-send-fill me-2" /> Send Message
                     </button>
                   </div>
                 </div>

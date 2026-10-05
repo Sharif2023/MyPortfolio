@@ -7,9 +7,9 @@ export default function Hero() {
   useEffect(() => {
     const typed = new Typed(typedRef.current, {
       strings: [
-        "Full-Stack Developer <i class='bi bi-laptop-fill'></i>",
-        "React Developer <i class='bi bi-code-slash'></i>",
-        "Backend Developer <i class='bi bi-hdd-stack-fill'></i>",
+        "Software Engineer <i class='bi bi-laptop-fill'></i>",
+        "Full-Stack Developer <i class='bi bi-code-slash'></i>",
+        "Singer <i class='bi bi-mic-fill'></i>",
         "UI/UX Designer <i class='bi bi-vector-pen'></i>",
       ],
       loop: true,

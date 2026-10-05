@@ -1,3 +1,5 @@
+import { RESUME_DATA } from '../data/portfolioData';
+
 export default function Resume() {
   return (
     <section id="resume" className="resume section light-background">
@@ -10,20 +12,25 @@ export default function Resume() {
         <div className="resume-summary card shadow-sm p-4 mb-5" data-aos="fade-up" data-aos-delay="100">
           <div className="d-flex flex-wrap align-items-start justify-content-between gap-3">
             <div>
-              <h3 className="resume-title mb-1"><i className="bi bi-person-lines-fill me-2" /> Shariful Islam</h3>
-              <p className="fw-semibold mb-2" style={{ color: 'var(--accent-color)' }}>Full-Stack Web Developer &amp; UI/UX Designer</p>
-              <p className="fst-italic mb-3">Dedicated Software Engineer with hands-on experience building full-stack web applications. I bridge the gap between beautiful UI and robust backend engineering — delivering scalable, production-ready solutions.</p>
+              <h3 className="resume-title mb-1"><i aria-hidden="true" className="bi bi-person-lines-fill me-2" /> {RESUME_DATA.summary.name}</h3>
+              <p className="fw-semibold mb-2" style={{ color: 'var(--accent-color)' }}>{RESUME_DATA.summary.title}</p>
+              <p className="fst-italic mb-3">{RESUME_DATA.summary.description}</p>
               <ul className="mt-2">
-                <li><i className="bi bi-geo-alt" /> Mugdapara, Dhaka-1214, Bangladesh</li>
-                <li><i className="bi bi-telephone" /> +8801700871179</li>
-                <li><i className="bi bi-envelope" /> sharifislam0505@gmail.com</li>
-                <li><i className="bi bi-linkedin" /> <a href="https://www.linkedin.com/in/si-sharif/" target="_blank" rel="noopener noreferrer">linkedin.com/in/si-sharif</a></li>
-                <li><i className="bi bi-github" /> <a href="https://github.com/sharif2023" target="_blank" rel="noopener noreferrer">github.com/Sharif2023</a></li>
+                {RESUME_DATA.summary.contact.map((item, i) => (
+                  <li key={i}>
+                    <i aria-hidden="true" className={`bi ${item.icon}`} /> 
+                    {item.link ? (
+                      <a href={item.link} target="_blank" rel="noopener noreferrer">{item.text}</a>
+                    ) : (
+                      ` ${item.text}`
+                    )}
+                  </li>
+                ))}
               </ul>
             </div>
             <div className="resume-pdf-btn-wrap">
-              <a href="/assets/resume/Shariful_Islam_Resume.pdf" target="_blank" rel="noopener noreferrer" className="resume-download-btn">
-                <i className="bi bi-file-earmark-pdf" /><span>View PDF Resume</span>
+              <a href={RESUME_DATA.summary.resumeUrl} target="_blank" rel="noopener noreferrer" className="resume-download-btn">
+                <i aria-hidden="true" className="bi bi-file-earmark-pdf" /><span>View PDF Resume</span>
               </a>
             </div>
           </div>
@@ -32,43 +39,20 @@ export default function Resume() {
         <div className="row gy-5">
           {/* Education */}
           <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 className="resume-title mb-4"><i className="bi bi-mortarboard-fill me-2" /> Education</h3>
+            <h3 className="resume-title mb-4"><i aria-hidden="true" className="bi bi-mortarboard-fill me-2" /> Education</h3>
             <div className="timeline">
-              {[
-                {
-                  title: 'B.Sc. in Computer Science & Engineering',
-                  period: '2021 – 2025',
-                  institution: 'United International University (UIU), Dhaka',
-                  detail: 'Focused on software development, web technologies, database systems, and UI/UX design.',
-                  gpa: 'GPA: 3.31 / 4.00',
-                  certificate: '/assets/Academic_Certificate/UIU_Certificate.pdf',
-                },
-                {
-                  title: 'Higher Secondary Certificate (HSC) – Science',
-                  period: '2018 – 2020',
-                  institution: 'Kabi Nazrul Govt. College, Dhaka',
-                  gpa: 'GPA 4.75 / 5.00',
-                  certificate: '/assets/Academic_Certificate/HSC_Certificate.pdf',
-                },
-                {
-                  title: 'Secondary School Certificate (SSC) – Science',
-                  period: '2016 – 2018',
-                  institution: 'KPB School & College, Dhaka',
-                  gpa: 'GPA 5.00 / 5.00',
-                  certificate: '/assets/Academic_Certificate/SSC_Certificate.pdf',
-                },
-              ].map(e => (
+              {RESUME_DATA.education.map(e => (
                 <div className="timeline-item" key={e.title}>
                   <div className="timeline-marker" />
                   <div className="timeline-content">
                     <h4>{e.title}</h4>
-                    <h5><i className="bi bi-calendar3 me-1" />{e.period}</h5>
-                    <p><em><i className="bi bi-building me-1" />{e.institution}</em></p>
+                    <h5><i aria-hidden="true" className="bi bi-calendar3 me-1" />{e.period}</h5>
+                    <p><em><i aria-hidden="true" className="bi bi-building me-1" />{e.institution}</em></p>
                     {e.detail && <p>{e.detail}</p>}
                     <div className="edu-gpa-row">
                       <strong>{e.gpa}</strong>
                       <a href={e.certificate} target="_blank" rel="noopener noreferrer" className="edu-cert-btn">
-                        <i className="bi bi-file-earmark-pdf-fill" /> View Certificate
+                        <i aria-hidden="true" className="bi bi-file-earmark-pdf-fill" /> View Certificate
                       </a>
                     </div>
                   </div>
@@ -79,27 +63,23 @@ export default function Resume() {
 
           {/* Research + Languages */}
           <div className="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <h3 className="resume-title mb-4"><i className="bi bi-journal-code me-2" /> Research Works</h3>
+            <h3 className="resume-title mb-4"><i aria-hidden="true" className="bi bi-journal-code me-2" /> Research Works</h3>
             <div className="timeline">
-              {[
-                { title: 'Comparative Analysis of Energy Efficiency in Modern Frontend Frameworks', field: 'Green Computing Perspective', icon: 'bi-cpu' },
-                { title: 'Real-Time Anxiety Detection and Intervention System for Programmers', field: 'Human-Computer Interaction', icon: 'bi-activity' },
-                { title: 'Evaluating the Impact of Sketch and Voice Inputs on Divergent Thinking in Generative AI', field: 'Generative AI Interactions', icon: 'bi-lightbulb' },
-              ].map(r => (
+              {RESUME_DATA.research.map(r => (
                 <div className="timeline-item" key={r.title}>
                   <div className="timeline-marker" />
                   <div className="timeline-content">
                     <h4>{r.title}</h4>
-                    <p><em><i className={`bi ${r.icon} me-1`} />{r.field}</em></p>
+                    <p><em><i aria-hidden="true" className={`bi ${r.icon} me-1`} />{r.field}</em></p>
                     <p>Status: <span style={{ color: 'var(--accent-color)', fontWeight: 600 }}>In Progress</span></p>
                   </div>
                 </div>
               ))}
             </div>
 
-            <h3 className="resume-title mt-5 mb-4"><i className="bi bi-translate me-2" /> Languages</h3>
+            <h3 className="resume-title mt-5 mb-4"><i aria-hidden="true" className="bi bi-translate me-2" /> Languages</h3>
             <div className="timeline">
-              {[{ lang: 'Bangla', level: 'Native / Fluent' }, { lang: 'English', level: 'Professional Working Proficiency' }].map(l => (
+              {RESUME_DATA.languages.map(l => (
                 <div className="timeline-item" key={l.lang}>
                   <div className="timeline-marker" />
                   <div className="timeline-content">

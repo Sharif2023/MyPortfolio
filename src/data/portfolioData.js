@@ -293,3 +293,90 @@ export const SKILLS = {
     { name: "Jira", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" }
   ] },
 };
+
+export const ABOUT_DATA = {
+  title: "Crafting Scalable Web Solutions with <span>Passion</span>",
+  description: [
+    "I'm a full-stack web developer with a deep passion for building modern, scalable web applications. Currently, I'm working at Fakibaj Gobeshok, where I design and maintain systems that power dynamic e-learning platforms.",
+    "My expertise spans across React, Node.js, and backend technologies like Express.js and PHP. I specialize in scalable frontend architectures, API integration, and database optimization.",
+    "Beyond my professional work, I'm pursuing research in green computing and AI-driven interactions to create technology that is not only functional but meaningful."
+  ],
+  statsLeft: [
+    { label: "Birthday", value: "6 December, 2001" },
+    { label: "Degree", value: "B.Sc. in CSE" },
+    { label: "Phone", value: "+8801700871179" },
+    { label: "City", value: "Mugdapara, Dhaka-1214" }
+  ],
+  statsRight: [
+    { label: "University", value: "United International University" },
+    { label: "Email", value: "sharifislam0505@gmail.com" },
+    { label: "LinkedIn", value: "si-sharif", link: "https://www.linkedin.com/in/si-sharif/" },
+    { label: "GitHub", value: "Sharif2023", link: "https://github.com/sharif2023" }
+  ],
+  journey: [
+    "My journey into technology began not with memorization, but with a deep-rooted passion for critical thinking. I naturally gravitated toward analytical subjects like Mathematics, Physics, and Chemistry. However, it was during my intermediate studies that I discovered Information and Communication Technology (ICT). Learning about number systems, HTML, and databases sparked a profound curiosity: <em>How does real-world software actually work behind the scenes?</em>",
+    "Despite not having a personal computer at the time to practice coding, my fascination only grew. I explored various tech disciplines and eventually chose to pursue a degree in <strong>Computer Science & Engineering (CSE)</strong> over a singular focus on software engineering. CSE offered a comprehensive foundation across multiple domains-from AI and cybersecurity to DevOps and project management-giving me the freedom to discover which path truly suited me best.",
+    "Today, my focus is on mastering software development from scratch. I deeply analyze industry workflows, architectural gaps, and business logic to evolve into a complete, highly adaptable software engineer. I continuously build new projects to keep pace with rapid industry shifts, embracing the challenge of learning new frameworks on demand. Ultimately, my vision is to architect and deploy my own large-scale digital platforms-similar to Udemy or Daraz-creating impactful products that solve real-world problems and generate sustainable passive income."
+  ],
+  softSkillsText: [
+    "Throughout my academic and professional career, I have developed a highly adaptive approach to teamwork. When collaborating with cross-functional or less technically experienced teams, I naturally step into a leadership role-strategically delegating tasks like data collection, surveys, and documentation while I architect and deploy the critical codebase from scratch. This was instrumental in driving the end-to-end development of three research papers currently submitted to ICCB.",
+    "I thrive under immense pressure. Working through sleepless nights and tight deadlines has been one of my greatest catalysts for rapid skill growth. Conversely, when collaborating with highly skilled engineers-whether debugging over a Google Meet or brainstorming architectures informally over tea at a local canteen or bridge-I am a sponge for new knowledge. I adapt to new environments almost instantly, always seeking the most optimized path to 100% project completion under my core philosophy: <em>\"Less Effort, More Outcome.\"</em> Ultimately, I am driven by an uncompromising sense of accountability; I take my commitments seriously and refuse to settle for known mistakes."
+  ],
+  softSkillsTags: [
+    { icon: "bi-diagram-3", text: "Technical Leadership" },
+    { icon: "bi-lightning-charge", text: "High-Pressure Execution" },
+    { icon: "bi-arrow-repeat", text: "Rapid Adaptability" },
+    { icon: "bi-check2-circle", text: "Accountability" },
+    { icon: "bi-chat-quote", text: "Informal Collaboration" },
+    { icon: "bi-gear-wide-connected", text: "Strategic Delegation" }
+  ]
+};
+
+export const RESUME_DATA = {
+  summary: {
+    name: "Shariful Islam",
+    title: "Full-Stack Web Developer & UI/UX Designer",
+    description: "Passionate Software Engineer with hands-on experience developing and deploying software with React, Next.js, JavaScript, TypeScript, Node.js, Express.js, PHP, Laravel and Relational/Non-relational Databases. Experienced with REST APIs, Authentication, RBAC, payment flows, real-time features and cloud deployment. Targetted on building responsive, maintainable and production-ready applications",
+    contact: [
+      { icon: "bi-geo-alt", text: "Mugdapara, Dhaka-1214, Bangladesh" },
+      { icon: "bi-telephone", text: "+8801700871179" },
+      { icon: "bi-envelope", text: "sharifislam0505@gmail.com" },
+      { icon: "bi-linkedin", text: "linkedin.com/in/si-sharif", link: "https://www.linkedin.com/in/si-sharif/" },
+      { icon: "bi-github", text: "github.com/Sharif2023", link: "https://github.com/sharif2023" }
+    ],
+    resumeUrl: "/assets/resume/Shariful_Islam_Resume.pdf"
+  },
+  education: [
+    {
+      title: 'B.Sc. in Computer Science & Engineering',
+      period: '2021 - 2025',
+      institution: 'United International University (UIU), Dhaka',
+      detail: 'Focused on software development, web technologies, database systems, and UI/UX design.',
+      gpa: 'GPA: 3.31 / 4.00',
+      certificate: '/assets/Academic_Certificate/UIU_Certificate.pdf',
+    },
+    {
+      title: 'Higher Secondary Certificate (HSC) - Science',
+      period: '2018 - 2020',
+      institution: 'Kabi Nazrul Govt. College, Dhaka',
+      gpa: 'GPA 4.75 / 5.00',
+      certificate: '/assets/Academic_Certificate/HSC_Certificate.pdf',
+    },
+    {
+      title: 'Secondary School Certificate (SSC) - Science',
+      period: '2016 - 2018',
+      institution: 'KPB School & College, Dhaka',
+      gpa: 'GPA 5.00 / 5.00',
+      certificate: '/assets/Academic_Certificate/SSC_Certificate.pdf',
+    },
+  ],
+  research: [
+    { title: 'Comparative Analysis of Energy Efficiency in Modern Frontend Frameworks', field: 'Green Computing Perspective', icon: 'bi-cpu' },
+    { title: 'Real-Time Anxiety Detection and Intervention System for Programmers', field: 'Human-Computer Interaction', icon: 'bi-activity' },
+    { title: 'Evaluating the Impact of Sketch and Voice Inputs on Divergent Thinking in Generative AI', field: 'Generative AI Interactions', icon: 'bi-lightbulb' },
+  ],
+  languages: [
+    { lang: 'Bangla', level: 'Native / Fluent' },
+    { lang: 'English', level: 'Professional Working Proficiency' }
+  ]
+};
