@@ -67,12 +67,26 @@ export default function ProjectModal({ project, onClose }) {
                 </p>
               </div>
             )}
+            {!project.github && (
+              <div className="modal-section" style={{ borderLeftColor: '#3b82f6' }}>
+                <span className="modal-section-label" style={{ color: '#3b82f6' }}><i aria-hidden="true" className="bi bi-people-fill" /> Team Project</span>
+                <p style={{ fontSize: '13px', fontStyle: 'italic' }}>
+                  This application was built as a collaborative team project. The source code repository is kept private for organizational and security reasons, while the live deployment is fully accessible for evaluation.
+                </p>
+              </div>
+            )}
           </div>
 
           <div className="proj-modal-actions">
-            <a href={project.github} target="_blank" rel="noopener noreferrer" className="proj-btn proj-btn-repo">
-              <i aria-hidden="true" className="bi bi-github" /> View Repo
-            </a>
+            {project.github ? (
+              <a href={project.github} target="_blank" rel="noopener noreferrer" className="proj-btn proj-btn-repo">
+                <i aria-hidden="true" className="bi bi-github" /> View Repo
+              </a>
+            ) : (
+              <span className="proj-btn proj-btn-repo" title="Team Project (Private Repository)" style={{ opacity: 0.7, cursor: 'default' }}>
+                <i aria-hidden="true" className="bi bi-lock-fill" /> Team Project (Private Repo)
+              </span>
+            )}
             {project.live && (
               <a href={project.live} target="_blank" rel="noopener noreferrer" className="proj-btn proj-btn-live">
                 <i aria-hidden="true" className="bi bi-play-fill" /> Live Demo

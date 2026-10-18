@@ -56,6 +56,32 @@ export const PROJECTS = [
     `,
     requiresContact: false
   },
+  {
+    name: "Aynemra Resume Builder", key: "aynemra", live: "https://www.aynemra.site/", github: null,
+    thumbnail: "assets/project_thumbnail/aynemra.jpg", featured: true, language: "TypeScript", category: "Frontend",
+    problem: "Many job seekers use plain documents or poorly formatted resumes that hurt readability and ATS compatibility. Creating a professional resume usually requires design knowledge and tedious manual formatting across multiple tools without a clean export workflow.",
+    stack: ["Next.js 16 (App Router)", "React 19", "TypeScript", "Tailwind CSS", "Playwright", "jsPDF", "html2pdf.js"],
+    impact: "A modern, ATS-friendly resume builder and SaaS platform that helps candidates create, customize, and export professional CVs. Features multi-template editing, live responsive preview, high-fidelity PDF/PNG downloads, and an integrated authentication for premium template unlocks alongside an administrative analytics dashboard.",
+    learning: `
+      <div class="learning-category">
+        <span class="learning-header"><i class="bi bi-window-sidebar"></i> Next.js 16 & React 19 Architecture</span>
+        <p>Architected a modular, template-driven resume builder using Next.js 16 App Router and React 19, managing complex dynamic form state, instant preview synchronization, and responsive SaaS dashboard workflows.</p>
+      </div>
+      <div class="learning-category">
+        <span class="learning-header"><i class="bi bi-file-earmark-pdf"></i> PDF & Browser Rendering Pipeline</span>
+        <p>Tackled browser-to-document rendering challenges by orchestrating export workflows across Playwright, jsPDF, html2pdf.js, and DOM-to-image utilities for pixel-perfect ATS-compliant document generation.</p>
+      </div>
+      <div class="learning-category">
+        <span class="learning-header"><i class="bi bi-palette"></i> ATS-Compliant Layouts & Reusable Component Systems</span>
+        <p>Engineered reusable component architectures and flexible resume layouts (experience, education, skills, and custom sections) tuned for recruiter readability and automated parsing compatibility.</p>
+      </div>
+      <div class="learning-category">
+        <span class="learning-header"><i class="bi bi-people"></i> Collaborative Team Execution</span>
+        <p>Contributed to a production team codebase, coordinating clean interface boundaries between landing pages, builder state, export APIs, and private repository workflows.</p>
+      </div>
+    `,
+    requiresContact: false
+  },
   { 
     name: "Amar Recipe", key: "amar_recipe", live: "https://amar-recipe.vercel.app/", github: "https://github.com/Sharif2023/Amar_Recipe", 
     thumbnail: "assets/project_thumbnail/amar_recipe.jpg", featured: true, language: "JavaScript", category: "Full-Stack",

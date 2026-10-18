@@ -86,9 +86,15 @@ export default function Projects({ onOpenModal }) {
                       <button className="proj-btn proj-btn-detail" onClick={() => onOpenModal(p)}>
                         <i aria-hidden="true" className="bi bi-info-circle" /> Details
                       </button>
-                      <a href={p.github} target="_blank" rel="noopener noreferrer" className="proj-btn proj-btn-repo">
-                        <i aria-hidden="true" className="bi bi-github" /> Repo
-                      </a>
+                      {p.github ? (
+                        <a href={p.github} target="_blank" rel="noopener noreferrer" className="proj-btn proj-btn-repo">
+                          <i aria-hidden="true" className="bi bi-github" /> Repo
+                        </a>
+                      ) : (
+                        <span className="proj-btn proj-btn-repo" title="Team Project (Private Repository)" style={{ opacity: 0.65, cursor: 'default' }}>
+                          <i aria-hidden="true" className="bi bi-lock-fill" /> Private
+                        </span>
+                      )}
                       {p.live && (
                         <a href={p.live} target="_blank" rel="noopener noreferrer" className="proj-btn proj-btn-live">
                           <i aria-hidden="true" className="bi bi-play-fill" /> Live Demo
