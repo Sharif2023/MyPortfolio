@@ -74,7 +74,7 @@ export default function About() {
             </div>
 
             <div className="about-cta-wrap mt-5">
-              <a href="https://www.linkedin.com/in/si-sharif/" target="_blank" rel="noopener noreferrer" className="about-cta-btn"><i aria-hidden="true" className="bi bi-linkedin" /> LinkedIn</a>
+              <a href="https://www.linkedin.com/in/sisharif-in" target="_blank" rel="noopener noreferrer" className="about-cta-btn"><i aria-hidden="true" className="bi bi-linkedin" /> LinkedIn</a>
               <a href="https://github.com/sharif2023" target="_blank" rel="noopener noreferrer" className="about-cta-btn"><i aria-hidden="true" className="bi bi-github" /> GitHub</a>
               <a href="/assets/resume/Shariful_Islam_Resume.pdf" target="_blank" rel="noopener noreferrer" className="about-cta-btn about-cta-primary"><i aria-hidden="true" className="bi bi-file-earmark-person" /> View Resume</a>
             </div>

@@ -70,7 +70,7 @@ export default function Contact() {
               </div>
               <div className="contact-social-row">
                 {[
-                  { href: 'https://www.linkedin.com/in/si-sharif/', icon: 'bi-linkedin', title: 'LinkedIn' },
+                  { href: 'https://www.linkedin.com/in/sisharif-in', icon: 'bi-linkedin', title: 'LinkedIn' },
                   { href: 'https://github.com/Sharif2023', icon: 'bi-github', title: 'GitHub' },
                   { href: 'https://facebook.com/sharif.me2018', icon: 'bi-facebook', title: 'Facebook' },
                   { href: 'https://www.instagram.com/shariful_islam10', icon: 'bi-instagram', title: 'Instagram' },

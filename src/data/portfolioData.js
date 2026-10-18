@@ -342,7 +342,7 @@ export const ABOUT_DATA = {
   statsRight: [
     { label: "University", value: "United International University" },
     { label: "Email", value: "sharifislam0505@gmail.com" },
-    { label: "LinkedIn", value: "si-sharif", link: "https://www.linkedin.com/in/si-sharif/" },
+    { label: "LinkedIn", value: "sisharif-in", link: "https://www.linkedin.com/in/sisharif-in" },
     { label: "GitHub", value: "Sharif2023", link: "https://github.com/sharif2023" }
   ],
   journey: [
@@ -373,7 +373,7 @@ export const RESUME_DATA = {
       { icon: "bi-geo-alt", text: "Mugdapara, Dhaka-1214, Bangladesh" },
       { icon: "bi-telephone", text: "+8801700871179" },
       { icon: "bi-envelope", text: "sharifislam0505@gmail.com" },
-      { icon: "bi-linkedin", text: "linkedin.com/in/si-sharif", link: "https://www.linkedin.com/in/si-sharif/" },
+      { icon: "bi-linkedin", text: "linkedin.com/in/sisharif-in", link: "https://www.linkedin.com/in/sisharif-in" },
       { icon: "bi-github", text: "github.com/Sharif2023", link: "https://github.com/sharif2023" }
     ],
     resumeUrl: "/assets/resume/Shariful_Islam_Resume.pdf"
